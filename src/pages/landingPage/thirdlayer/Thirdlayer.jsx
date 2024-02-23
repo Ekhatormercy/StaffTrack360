@@ -1,5 +1,6 @@
 // import Reviewcard from "../../Components/ReviewCard"
-import Reviewcard from "../../../Components/ReviewCard"
+// import Reviewcard from "../../../Components/ReviewCard"
+import Reviewcard from "../../Reviewcard"
 import koralogo from "../../../assets/koralogo.jpg"
 import "./Thirdlayer.css"
 const Thirdlayer =()=>{
