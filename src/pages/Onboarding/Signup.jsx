@@ -5,7 +5,7 @@ const Signup =()=>{
     const Nav = useNavigate()
     
     const handlepasschange =()=>{
-        Nav("/changepass")
+        Nav("/dashboard")
     }
     const handlelogin =()=>{
         Nav("/login")
