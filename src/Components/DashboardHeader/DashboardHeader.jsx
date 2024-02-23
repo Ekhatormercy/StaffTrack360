@@ -1,11 +1,13 @@
 import React from 'react'
 import "./DashboardHeader.css"
 import logogrn from "./images/LogoWhite.png"
+import { IoMenu } from "react-icons/io5";
 
 const DashboardHeader = () => {
   return (
     <div className='DashboardHeader'>
       <img className='dashboardHeaderLogo' src={logogrn} alt="Logo" />
+        <div className='menu'><IoMenu color='#00756A' size={30}/></div>
       <h4 className='dashboardHeaderText'>Welcome...</h4>
       <div className='userProfile'>
         <div className='Initials'>ET</div>
