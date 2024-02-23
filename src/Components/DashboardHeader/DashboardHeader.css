@@ -1,0 +1,60 @@
+.DashboardHeader{
+  width: 75vw;
+  height: 15vh;
+  border: solid 1px #00756A;
+  background: transparent;
+  border-radius:0px 0px 0px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+.dashboardHeaderLogo{
+  height: 42px;
+  width: 225px;
+}
+.dashboardHeaderText{
+  font-size: 28px;
+  color: #00756A;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.userProfile{
+  height: 80%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.Initials{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: #F8F8FB;
+  background-color: #00756A;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ProfileDetail{
+  height: 60%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+.ProfileDetail h5{
+  margin: 0px;
+  padding: 0px;
+
+}
+.ProfileDetail h6{
+  margin: 0px;
+  padding-left: 20px;
+
+}

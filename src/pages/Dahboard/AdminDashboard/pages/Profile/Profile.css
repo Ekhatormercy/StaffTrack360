@@ -1,0 +1,44 @@
+.Profile{
+  width: 60vw;
+  height: 60vh;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.ProfilePics{
+  width: 80%;
+  height: 40%;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: flex-end;
+  padding-left: 20px;
+  gap: 20px;
+}
+.ProfilePics button{
+  width: 30%;
+  height: 25%;
+  border-radius: 5px;
+  color: white;
+  background-color: #00756A;
+  border: none;
+  cursor: pointer;
+}
+.ProfileDetails{
+  height: 50%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.ProfileDetails1{
+  display: flex;
+  width: 90%;
+  height: 15%;
+  align-items: center;
+  justify-content: space-between;
+}

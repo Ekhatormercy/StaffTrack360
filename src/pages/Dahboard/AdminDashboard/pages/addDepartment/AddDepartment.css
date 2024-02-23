@@ -1,0 +1,85 @@
+.addDepartment{
+  width: 60vw;
+  height: 60vh;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.addDptHeader{
+  height: 7%;
+  width: 70%;
+  display: flex;
+  align-items: flex-start;
+}
+.addDptSec1{
+  height: 40%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: solid 1px #00756A;
+  border-radius: 5px;
+}
+.addDptSec2{
+  height: 40%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #00756A;
+  border-radius: 5px;
+}
+.addDptSec1 input{
+  width: 80%;
+  height: 25%;
+  border-radius: 5px;
+  border: solid 1px grey;
+  padding-left: 10px;
+}
+.addDptSec1 button{
+  width: 50%;
+  height: 25%;
+  border-radius: 5px;
+  color: white;
+  background-color: #00756A;
+  border: none;
+  cursor: pointer;
+}
+.listOfDept{
+  height: 15%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.listOfDeptMain{
+  height: 40%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  padding-inline: 10px;
+}
+.listOfDeptBtn{
+  width: 80%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.listOfDeptBtn button{
+  width: 35%;
+  height: 100%;
+  border-radius: 5px;
+  color: white;
+  background-color: #00756A;
+  border: none;
+  cursor: pointer;
+}
