@@ -1,6 +1,6 @@
 import "./Seclayer.css"
 import { OurServicesData } from "../../../Components/Data"
-// import rateimg from "../../assets/rateimg.png"
+
 import rateimg from "../../../assets/rateimg.png"
 const Secondlayer =()=>{
     return(
@@ -15,7 +15,7 @@ const Secondlayer =()=>{
                         <div className="perfratecard">
                         <div className="perfratecardrwap">
                           <div className="perfratingimgdiv">
-                             <img src={rateimg} alt="" />
+                             <img src={e.image} alt="" />
                          </div>
                    <div className="rateh1p">
                      <h1>{e.h1text}</h1>

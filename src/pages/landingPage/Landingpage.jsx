@@ -5,6 +5,7 @@ import Thirdlayer from "./thirdlayer/Thirdlayer"
 import Header from "./Header/Header"
 import Dropdown from "./Header/Dropdown"
 import { useState } from "react"
+import Footer from "../../Components/Footer/Footer"
 
 
 
@@ -21,6 +22,7 @@ const Landingpage =()=>{
         
          <Thirdlayer/>
          <Fourthlayer/>
+         <Footer/>
          
          </>
     )

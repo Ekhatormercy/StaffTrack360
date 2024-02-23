@@ -61,14 +61,14 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .perfratingimgdiv{
-    width: 85%;
-    height: 45%;
-    background-color: yellow;
+    width: 80%;
+    height: 30%;
+    /* background-color: yellow; */
 }
 .perfratingimgdiv img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .perfratecardrwap{
 width: 90%;
