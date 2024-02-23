@@ -1,0 +1,126 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.Businessemailbox{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Businessmailwrap{
+    width: 40%;
+    height: 85%;
+    /* background-color: pink; */
+    border: 2px solid #00756A;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    
+}
+.businessmainwrap{
+    width: 60%;
+    height: 90%;
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Bizlogodiv{
+    width: 60%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightblue; */
+
+}
+.Bizlogodiv img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.businessmainwrap input{
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "raleway";
+    border: 1px solid #545454;
+    outline: none;
+    color: gray;
+    padding-inline: 10px;
+}
+.businessmainwrap p{
+    font-size: 15px;
+    font-family: "raleway";
+    font-weight: 600;
+    color: rgb(51, 62, 73);
+}
+.Continuebtn{
+    width: 130px;
+    height: 8%;
+    background-color: #00756A;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transform: scale(1);
+    transition: all 250ms ease-in;
+    
+}
+.Continuebtn:hover{
+    transform: scale(1.08);
+  
+} 
+@media screen and (max-width :1178px){
+    .Businessmailwrap{
+        width: 85%;
+        height: 85%;
+        /* background-color: pink; */
+        border: 2px solid #00756A;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+        
+    }
+    .businessmainwrap{
+        width: 80%;
+        height: 90%;
+        /* background-color: grey; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .businessmainwrap input{
+        width: 100%;
+        height: 10%;
+        border-radius: 10px;
+        font-size: 17px;
+        font-weight: 600;
+        font-family: "raleway";
+        border: 1px solid #545454;
+        outline: none;
+        color: gray;
+        padding-inline: 10px;
+    } 
+    .businessmainwrap p{
+        font-size: 18px;
+        font-family: "raleway";
+        font-weight: 600;
+        color: rgb(51, 62, 73);
+    }
+} 

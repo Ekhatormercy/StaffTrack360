@@ -1,0 +1,246 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+.Header{
+    width: 100%;
+    height: 12vh;
+    background-color: rgb(0, 117, 106);
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+.Header.scrolled{
+    background-color: white; 
+}
+
+.Headerwrap{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    /* background-color: grey; */
+}
+.staflogodiv{
+    width: 15%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+.staflogodiv h3.logo-scrolled{
+    color: rgb(0, 117, 106)
+}
+
+.staflogodiv h3{
+    font-size: 35px;
+    color: white;
+    font-family: "raleway";
+    transition: color 0.3s ease;
+    /* font-family: cursive; */
+}
+.staflogodiv span{
+    font-size: 12px;
+    color: orange;
+    font-family: cursive;
+}
+.Navdiv{
+    width: 30%;
+    height: 100%;
+    /* background-color: greenyellow; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 100px; 
+   
+
+}
+.Navdiv p{
+    font-size: 16px;
+    font-family: "raleway";
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    
+}
+.Navdiv p:hover{
+    color: lightgrey;
+}
+.Navdiv p.text-scrolled{
+    color: rgb(0, 117, 106);
+}
+.Upbuttndiv{
+    width: 45%;
+    height: 100%;
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+    cursor: pointer;
+}
+.loginbtn{
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.3s ease;
+   
+}
+.loginbtn.login-scrolled{
+    color: rgb(0, 117, 106);
+   
+}
+.Trialbtn{
+    cursor: pointer;
+    width: 150px;
+    color:  rgb(0, 117, 106);
+   border-radius: 6px;
+    height: 50%;
+    background-color: white;
+    border: none;
+    font-weight: 600;
+    font-family: "raleway";
+    font-size: 13px;
+    padding: 5px;
+    transform: scale(1);
+    transition: all 250ms ease-in;
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+   }
+
+.Trialbtn:hover{
+    transform: scale(1.08);
+    /* border: none; */
+}  
+.Trialbtn.signup-scrolled{
+    background-color: rgb(0, 117, 106) ;
+    color: white;
+}
+
+.burger{
+    width: 10%;
+    height: 100%;
+    /* background-color: grey; */
+    /* font-size: large; */
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    display: none;
+    /* display: flex; */
+    
+}
+.Dropdown{
+    width: 100%;
+    height: 87vh;
+ position: absolute;
+backdrop-filter: blur(10px);
+  display: flex;
+ align-items: flex-end;
+ flex-direction: column;
+  display: none; 
+}
+.sidehold{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-inline: 10px;
+    gap: 20px;
+}
+.Sideholdtextdiv{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-inline: 10px;
+   
+    
+}
+.Dropdown div{
+    font-size: 20px;
+    color:  rgb(0, 117, 106);
+    gap: 50px;
+    font-weight: 600;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+    font-family: "raleway";
+  
+}
+.border{
+   width: 100%;
+   height: 18%;
+   /* background-color: green; */
+   border-bottom: 1px solid lightgray;
+   display: flex;
+   align-items: center;
+}
+.BUTTONDIV{
+    width: 100%;
+    height: 40%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.droplogin{
+    font-size: 20px;
+    font-family: "raleway";
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 117, 106);
+    font-weight: 700;
+    transition: color 0.3s ease;
+    
+}
+.dropsign{
+    cursor: pointer;
+    width: 90%;
+    color:  white;
+   border-radius: 8px;
+    height: 25%;
+    background-color: rgb(0, 117, 106);
+    font-size: 20px;
+    font-family: "raleway";
+}
+
+@media screen and (max-width :1178px){
+  .Navdiv{
+    display: none;
+  }
+  .Headerwrap{
+    display: flex;
+    justify-content: space-between;
+  }
+  .burger{
+    display: flex;
+    color: #fff;
+
+  }
+  .Upbuttndiv{
+    display: none;
+  }
+  .Dropdown{
+    display: flex;
+  }
+  .staflogodiv h3{
+    font-size: 18px;
+  }
+}
+
+

@@ -1,0 +1,128 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.Signupbox{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signupwrap{
+    width: 40%;
+    height: 80%;
+    /* background-color: grey; */
+    border-radius: 10px;
+    border: 2px solid #00756A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+.inputwrapSignup{
+  width: 70%;
+  height: 85%;
+  /* background-color: pink; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.inputwrapSignup input{
+    width: 90%;
+    height: 10%;
+    padding-inline: 10px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    font-family: "raleway";
+    font-weight: 600;
+    outline: none;
+    color: gray;
+    border: 1px solid #545454;
+
+}
+.signuppbtn{
+    width: 140px;
+    height: 9%;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    background-color: #00756A;
+    cursor: pointer;
+    font-size: 15px;
+    transform: scale(1);
+    transition: all 250ms ease-in;
+}
+.signuppbtn:hover{
+    transform: scale(1.08);
+}
+.sgnin{
+    width: 85%;
+    height:5%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: flex-end;
+}
+.sgnin p{
+  font-family: "raleway";
+  font-weight: 500;
+}
+.sgnin span{
+    color: #00756A;
+    cursor: pointer;
+    font-weight: 600;
+}
+@media screen and (max-width :1178px){
+    .signupwrap{
+        width: 85%;
+        height: 85%;
+        /* background-color: grey; */
+        border-radius: 10px;
+        border: 2px solid #00756A;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        
+    } 
+    .inputwrapSignup{
+        width: 85%;
+        height: 85%;
+        /* background-color: pink; */
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .inputwrapSignup input{
+        width: 95%;
+        height: 11%;
+        padding-inline: 10px;
+        border-radius: 8px;
+        outline: none;
+        font-size: 17px;
+        font-family: "raleway";
+        font-weight: 600;
+        outline: none;
+        color: gray;
+        border: 1px solid #545454;
+    
+    }
+    .sgnin p{
+        font-family: "raleway";
+        font-weight: 500;
+        font-size: 17px;
+      }
+      .sgnin span{
+          color: #00756A;
+          cursor: pointer;
+          font-weight: 600;
+      }
+}
