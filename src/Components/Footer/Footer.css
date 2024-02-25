@@ -5,25 +5,23 @@
 }
 .footercontainer{
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     background-color:  rgb(0, 117, 106);
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+   align-items: center;
+   justify-content: center;
 }
 
 
 .upperpart{
     width: 87%;
-    height: 80%;
+    height: 90%;
     /* background-color: aqua; */
     display: flex;
-    /* justify-content: space-evenly; */
-    padding-top: 40px;
-    padding-right:40px;
+    /* align-items: center; */
+    justify-content: space-between;
     color: white;
-    gap: 70px;
+   
 }
 .upperpart1 {
     width: 30%;
@@ -41,12 +39,12 @@
     font-family: "raleway";
 }
 .upperpart1 p:hover{
-  color: lightgray;
+  color: orange;
 }
 .upperpart2 {
-    width: 30%;
+    width: 25%;
     height: 55%;
-    /* background-color: red; */
+    /* background-color: green; */
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -59,12 +57,12 @@
     font-family: "raleway";
 }
 .upperpart2 p:hover{
-  color: lightgray;
+  color: orange;
 }
 .upperpart5 {
-    width: 30%;
+    width: 12%;
     height: 40%;
-    /* background-color: red; */
+    /* background-color: pink; */
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -74,42 +72,42 @@
 .upperpart5 p{
     font-size: 15px;
     font-weight: 500;
-    font-family: "raleway";
+    font-family: raleway;
 }
 .upperpart5 p:hover{
-  color: lightgray;
+  color: orange;
 }
 
-.lowerpart{
+/* .lowerpart{
     width: 20%;
     height: 20%;
-    /* background-color: blue; */
+    background-color: blue;
     color: white;
     padding-top:55px;
 
 
-}
+} */
 
 
 .leftpartwrapper{
     width: 15%;
     height: 30%;
     /* background-color: pink; */
-    margin-top: px;
-    margin-left: 80px;
+    /* margin-top: px; */
+    /* margin-left: 80px; */
 }
- .leftpart{
+ /* .leftpart{
     width: 100%;
     height: 100%;
-    /* background-color: blue; */
-}
+    background-color: blue;
+} */
 
 .middlewrapper{
     width: 100%;
     height: 40%;
     /* background-color: brown; */
-    margin-left: 600px;
-    margin-bottom: 60px;
+    /* margin-left: 600px; */
+    /* margin-bottom: 60px; */
     /* margin-top:800px ; */
     display: flex;
     justify-content: space-between;
@@ -141,4 +139,81 @@
     width: 100%;
     height: 100%;
     /* background-color: purple; */
+}
+@media screen and (max-width :1178px){
+    .footercontainer{
+        width: 100%;
+        height: 80vh;
+        background-color:  rgb(0, 117, 106);
+        display: flex;
+        justify-content: center;
+        /* flex-direction: column; */
+        align-items: center;
+    } 
+    .upperpart{
+        width: 87%;
+        height: 90%;
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+       
+    }
+    .upperpart1 {
+        width: 75%;
+        height: 40%;
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .upperpart1 p{
+        font-size: 11px;
+        font-weight: 500;
+        font-family: "raleway";
+    }
+    .upperpart1 p:hover{
+        color: orange;
+      }
+    .upperpart2 {
+        width: 75%;
+        height: 30%;
+        /* background-color: green; */
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .upperpart2 p{
+        font-size: 11px;
+        font-weight: 500;
+        font-family: "raleway";
+    }
+    .upperpart2 p:hover{
+      color: orange;
+    }
+  
+    .upperpart5 {
+        width: 75%;
+        height: 20%;
+        /* background-color: pink; */
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .upperpart5 p{
+        font-size: 11px;
+        font-weight: 500;
+        font-family: raleway;
+    }
+    .upperpart5 p:hover{
+      color: orange;
+    }
 }
