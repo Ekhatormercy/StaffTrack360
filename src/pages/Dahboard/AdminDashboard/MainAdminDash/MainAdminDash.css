@@ -4,8 +4,12 @@
 }
 .MainConntainer{
   height: 100vh;
+<<<<<<< HEAD
   width: 100wh;
   /* background-color: green; */
+=======
+  width: 100vw;
+>>>>>>> 6114a164d5b18737e09351dfdc81ad36c7f643af
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,22 +22,36 @@
   align-items: end;
 }
 .rightSection{
-  width: 75%;
+  width: 100%;
   height: 100%;
   /* background-color: pink; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width:414px) {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 .TopRightSection{
   width: 100%;
   height: 15%;
+  @media screen and (max-width:414px) {
+    width: 100%;
+    height: 10%;
+  }
   /* background-color: antiquewhite; */
 }
 .mainRightSection{
   width: 100%;
   height: 75%;
+  @media screen and (max-width:414px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+   }
   /* background-color: aquamarine; */
  
 }
@@ -56,6 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   border-radius: 0px 31px 0px 0px;
   /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
   font-family: "raleway";
@@ -181,3 +200,6 @@
   font-family: "raleway";
   font-weight: 600;
 }
+=======
+}
+>>>>>>> 6114a164d5b18737e09351dfdc81ad36c7f643af

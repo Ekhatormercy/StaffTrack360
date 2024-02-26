@@ -1,0 +1,134 @@
+<<<<<<< HEAD
+=======
+.Sidebar{
+  width: 15vw;
+  height: 95vh;
+  background-color: #00756A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 31px 0px 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @media screen and (max-width:414px) {
+    display: none;
+   }
+    }
+.sidebarMain{
+  width: 95%;
+  height: 100%;
+  @media screen and (max-width:414px) {
+    display: none;
+   }
+
+}
+.freeSpaceTop{
+  width: 100%;
+  height: 15%;
+  @media screen and (max-width:414px) {
+    display: none;
+   }
+}
+.menuItems{
+  width: 100%;
+  height: 65%;
+  display: flex;
+  align-items: flex-start;
+  /* justify-content: center; */
+  flex-direction: column;
+  color: white;
+  /* gap: 10px; */
+  margin: 0px;
+  padding: 0px;
+  @media screen and (max-width:414px) {
+    display: none;
+   }
+}
+.item1{
+  background-color: aliceblue;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 5px;
+  gap: 5px;
+  cursor: pointer;
+  padding-left: 5px;
+  @media screen and (max-width:414px) {
+    display: none;
+   }
+}
+.item2{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 5px;
+  gap: 5px;
+  cursor: pointer;
+  padding-left: 5px;
+  @media screen and (max-width:414px) {
+    display: none;
+   }
+
+}
+.item3{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 5px;
+  gap: 5px;
+  cursor: pointer;
+  padding-left: 5px;
+
+}
+.item4{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 5px;
+  gap: 5px;
+  cursor: pointer;
+  padding-left: 5px;
+}
+
+.item1 p{
+  
+  color: #00756A;
+  font-weight: bold;
+
+}
+.item2 p{
+  margin: 0px;
+  padding: 0px;
+}
+.item3 p{
+  margin: 0px;
+  padding: 0px;
+}
+.item4 p{
+  margin: 0px;
+  padding: 0px;
+}
+.logout{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout button{
+  width: 70%;
+  height: 30%;
+  color: #00756A;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+>>>>>>> 6114a164d5b18737e09351dfdc81ad36c7f643af

@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  
 }
 .MainPerformance{
   width: 95%;
@@ -17,7 +17,20 @@
   align-items: center;
   justify-content: space-around;
   font-weight: bold;
+<<<<<<< HEAD
   font-family: raleway;
+=======
+  @media screen and (max-width:414px) {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    overflow-x: scroll;
+    font-size: 8px;
+   }
+>>>>>>> 6114a164d5b18737e09351dfdc81ad36c7f643af
 }
 .sN{
   width: 5%;
