@@ -10,12 +10,14 @@
   
 }
 .MainPerformance{
-  width: 90%;
+  width: 95%;
   height: 15%;
+  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: space-around;
   font-weight: bold;
+  font-family: raleway;
   @media screen and (max-width:414px) {
     width: 90%;
     height: 10%;
@@ -30,19 +32,24 @@
 .sN{
   width: 5%;
   height: 10%;
+  /* background-color: grey; */
+  font-family: raleway;
 }
 .EmployeeName{
   width: 30%;
   height: 10%;
+  font-family: raleway;
 }
 .EmployeeDepartment{
   width: 30%;
   height: 10%;
+  font-family: raleway;
 }
 .ratings{
   width: 35%;
   height: 10%;
   display: flex;
+  /* background-color: blue; */
   justify-content: space-between;
 }
 .MainPerformanceRating{
@@ -54,4 +61,6 @@
 }
 .MainPerformanceRating p{
   font-size: 12px;
+  font-family: raleway;
+  font-weight: 500;
 }

@@ -1,4 +1,5 @@
 // import { RouterProvider, createBrowserRouter } from 'react-router-dom"
+import "./App.css"
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import Landingpage from './pages/landingPage/Landingpage'
 import Login from './pages/Onboarding/Login'

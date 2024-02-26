@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Performance.css"
 
 const Performance = () => {
+
+
+
   return (
     <div className='Performance'>
         <div className='MainPerformance'>
