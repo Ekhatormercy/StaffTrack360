@@ -17,9 +17,7 @@
   align-items: center;
   justify-content: space-around;
   font-weight: bold;
-<<<<<<< HEAD
   font-family: raleway;
-=======
   @media screen and (max-width:414px) {
     width: 90%;
     height: 10%;
@@ -30,7 +28,6 @@
     overflow-x: scroll;
     font-size: 8px;
    }
->>>>>>> 6114a164d5b18737e09351dfdc81ad36c7f643af
 }
 .sN{
   width: 5%;
