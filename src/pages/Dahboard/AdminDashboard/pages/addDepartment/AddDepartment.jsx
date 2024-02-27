@@ -19,6 +19,8 @@ const AddDepartment = () => {
               <p>Account</p>
               <p>Ujah Collins</p>
             </div>
+           
+           
             <div className='listOfDeptBtn'><button>View all</button></div>
         </div>
     </div>

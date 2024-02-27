@@ -7,6 +7,8 @@ import BusinessEmail from './pages/Onboarding/BusinessEmail'
 import Signup from './pages/Onboarding/Signup'
 import PasswordChange from './pages/Onboarding/Passwordchange'
 import MainAdminDash from './pages/Dahboard/AdminDashboard/MainAdminDash/MainAdminDash'
+import LoginEmployee from "./pages/Onboarding/LoginEmployee"
+import LoginasBusiness from "./pages/Onboarding/Login"
 function App() {
  
 
@@ -16,7 +18,8 @@ function App() {
    
       <Routes>
       <Route path='/' element={<Landingpage/>}/>
-      <Route path='/login' element={<Login/>}/>
+      <Route path='/loginasBusiness' element={<LoginasBusiness/>}/>
+      <Route path='/loginasEmployee' element={<LoginEmployee/>}/>
       <Route path='/businessmail' element={<BusinessEmail/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/changepass' element={<PasswordChange/>}/>

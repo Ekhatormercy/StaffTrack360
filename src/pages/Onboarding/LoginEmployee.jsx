@@ -2,8 +2,7 @@ import Button from "../../Components/buttons/Button"
 import Headerlgn from "../landingPage/Header/Headerlgn"
 import "./Login.css"
 import { useNavigate } from "react-router-dom"
-import LoginEmployee from "./LoginEmployee"
-const LoginasBusiness =()=>{
+const LoginEmployee =()=>{
 
     const Nav = useNavigate()
 
@@ -15,7 +14,7 @@ const LoginasBusiness =()=>{
     <Headerlgn/>  
     <div className="loginbox">
         <div className="loginwrap">
-          <h1 className="bizh1">Business Login</h1>
+           <h1 className="bizh1">Employee Login</h1>
             <div className="inputdiv">
                 <input type="text" placeholder="Email" />
                 <input type="text" placeholder="Password" />
@@ -34,4 +33,4 @@ const LoginasBusiness =()=>{
 
     )
 }
-export default LoginasBusiness
+export default LoginEmployee

@@ -1,16 +1,26 @@
 import { useEffect, useState } from "react"
 // import { FcMenu } from 'react-icons/fc';
 import { HiMenu } from "react-icons/hi";
+import { RiArrowDownSLine } from "react-icons/ri";
 import { GiCancel } from 'react-icons/gi';
 import { useNavigate } from "react-router-dom";
 import "./Header.css"
 const Header =({show, setShow})=>{
     const [isScrolled, setIsScrolled] =useState(false);
+    
+  const [showlogin, setShowlogin] =useState(false);
+
+  const showdrop =()=>{
+    setShowlogin(true);
+  }
 
     const Nav = useNavigate()
 
-    const handlelogin =()=>{
-        Nav("/login")
+    const handleloginasBusiness =()=>{
+        Nav("/loginasBusiness")
+    }
+    const handleloginasEmployee =()=>{
+        Nav("/loginasEmployee")
     }
     const handlesignup =()=>{
         Nav("/signup")
@@ -46,7 +56,7 @@ const Header =({show, setShow})=>{
                  
                 </div>
                 <div className="Upbuttndiv">
-                <button onClick={handlelogin} className={`loginbtn ${isScrolled ? 'login-scrolled' : ''}`}>Login</button>
+                <button className={`loginbtn ${isScrolled ? 'login-scrolled' : ''}`} onMouseOver={showdrop}>Login <RiArrowDownSLine /></button>
                <button onClick={handlesignup} className={`Trialbtn ${isScrolled ? 'signup-scrolled' : ''}`}>Sign Up</button>
                   
                 </div>
@@ -56,6 +66,14 @@ const Header =({show, setShow})=>{
     show === false ? <HiMenu />: <GiCancel/>
 }
 </div>
+
+         {
+          showlogin?    <div className="logindrop" onMouseLeave={()=>setShowlogin(false)}>
+          <h4 onClick={handleloginasBusiness}>As Business</h4>
+          <hr />
+          <h4 onClick={handleloginasEmployee}>As Employee</h4>
+        </div>:null
+         }
             </div>
         </div>
     )
