@@ -5,7 +5,7 @@
 }
 .Signupbox{
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@
 }
 .signupwrap{
     width: 40%;
-    height: 80%;
+    height: 90%;
     /* background-color: grey; */
     border-radius: 10px;
     border: 2px solid #00756A;
@@ -35,7 +35,7 @@
 }
 .inputwrapSignup input{
     width: 90%;
-    height: 10%;
+    height: 11%;
     padding-inline: 10px;
     border-radius: 8px;
     outline: none;
