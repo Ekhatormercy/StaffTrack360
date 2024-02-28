@@ -108,8 +108,8 @@ const MainAdminDash = () => {
           ) : employee ? (
             <AddEmployee />
           ) : profile ? (
-            // <Profile />
-            <Task/>
+            <Profile />
+            // <Task/>
           ) : 
           null}
         </div>
