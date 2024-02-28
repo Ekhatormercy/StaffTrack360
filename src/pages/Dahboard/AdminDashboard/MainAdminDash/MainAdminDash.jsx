@@ -13,7 +13,7 @@ import AddDepartment from "../pages/addDepartment/AddDepartment";
 import Profile from "../pages/Profile/Profile";
 import { Route, Routes } from "react-router-dom";
 import RateEmployee from "../../HodDashboard/Pages/rateEmployee/RateEmployee";
-
+import Task from "../task/Task";
 const MainAdminDash = () => {
   const [active, setActive] = useState("Active");
   const [performance, setPerformance] = useState(true);
@@ -109,7 +109,8 @@ const MainAdminDash = () => {
             <AddEmployee />
           ) : profile ? (
             <Profile />
-          ) : //  <RateEmployee/>:
+            // <Task/>
+          ) : 
           null}
         </div>
         </div>
