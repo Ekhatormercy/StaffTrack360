@@ -3,32 +3,38 @@ import Headerlgn from "../landingPage/Header/Headerlgn"
 import "./Signup.css"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
+// import { AppContext } from "../context/AppContext"
+
+import BusinessEmail from "./BusinessEmail"
+import AppContext from "../context/AppContext"
+import { useContext } from "react"
+import { MyContext } from "../context/AppContext"
 
 
 
 const Signup =()=>{
 
-    const [firstName, setFirstName]=useState('')
-    const [lastName, setLastName]=useState('')
-    const [businessName, setBusinessName]=useState('')
-    const [businessEmail, setBusinessEmail]=useState('')
-    const [phoneNumber, setPhoneNumber]= useState('')
-    const [password, setPassword]=useState('')
-
+    const {adminData, setAdminData} = useContext(MyContext)
+    const{
+      businessName,
+      businessEmail,
+      firstName,
+      lastName,
+      password,
+      phoneNumber,
+  
+  }=adminData
     const Nav = useNavigate()
-    const admindata = {
-      firstName:firstName,
-      lastName:lastName,
-      businessName:businessName,
-      phoneNumber:phoneNumber,
-      password:password,
-      businessEmail:businessEmail
+    const handleChange = (e)=>{
+      setAdminData({...adminData, [e.target.name] : e.target.value})
     }
+    
     const url = `https://staftrack360.onrender.com/api/v1/signup`
 
     const handlepasschange =async(e)=>{
       e.preventDefault();
-      await axios.post(url, admindata)
+      
+      await axios.post(url, adminData)
      .then((response)=>{
        console.log(response.data)
        Nav("/dashboard")
@@ -47,12 +53,12 @@ const Signup =()=>{
         <div className="Signupbox">
             <div className="signupwrap">
               <div className="inputwrapSignup">
-                <input type="text" placeholder="First Name" onChange={(e)=>setFirstName(e.target.value)} />
-                <input type="text" placeholder="Last Name" onChange={(e)=>setLastName(e.target.value)}/>
-                <input type="text" placeholder="Business Name" onChange={(e)=>setBusinessName(e.target.value)}/>
-                <input type="email" placeholder="Business Email" onChange={(e)=>setBusinessEmail(e.target.value)}/>
-                <input type="text" placeholder="Phone Number" onChange={(e)=>setPhoneNumber(e.target.value)}/>
-                <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
+                <input type="text" placeholder="First Name" name="firstName" value={firstName} onChange={handleChange}/>
+                <input type="text" placeholder="Last Name"  name="lastName" value={lastName} onChange={handleChange}/>
+                <input type="text" placeholder="Business Name"  name="businessName" value={businessName} onChange={handleChange}/>
+                <input type="email" placeholder="Business Email"  name="businessEmail" value={businessEmail} onChange={handleChange}/>
+                <input type="text" placeholder="Phone Number"  name="phoneNumber" value={phoneNumber} onChange={handleChange}/>
+                <input type="password" placeholder="Password"  name="password" value={password} onChange={handleChange}/>
                 <button onClick={handlepasschange} className="signuppbtn">SIGN UP</button>
               
               </div>
