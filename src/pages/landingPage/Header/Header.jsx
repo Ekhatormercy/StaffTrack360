@@ -5,6 +5,7 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import { GiCancel } from 'react-icons/gi';
 import { useNavigate } from "react-router-dom";
 import "./Header.css"
+
 const Header =({show, setShow})=>{
     const [isScrolled, setIsScrolled] =useState(false);
     
@@ -25,9 +26,7 @@ const Header =({show, setShow})=>{
     const handletrial =()=>{
         Nav("/trialpage")
     }
-    const handleOurService =()=>{
-        Nav("/ourservice")
-    }
+   
 
 
   useEffect(() => {
@@ -61,7 +60,7 @@ const Header =({show, setShow})=>{
                 </div>
                 <div className="Upbuttndiv">
                 <button className={`loginbtn ${isScrolled ? 'login-scrolled' : ''}`} onMouseOver={showdrop}>Login <RiArrowDownSLine /></button>
-               <button onClick={handlesignup} className={`Trialbtn ${isScrolled ? 'signup-scrolled' : ''}`}>Sign Up</button>
+               <button onClick={handletrial} className={`Trialbtn ${isScrolled ? 'signup-scrolled' : ''}`}>Sign Up</button>
                   
                 </div>
                 <div className='burger' onClick={() => setShow(!show)}>

@@ -7,6 +7,9 @@ const FreeTrial = () => {
   const handleroutechange = () =>{
       Nav("/successpage")
   }
+  const handlesignup = () =>{
+      Nav("/signup")
+  }
   return (
     <div className="maincontainer">
      <div className="mainwrapper">
@@ -23,13 +26,13 @@ const FreeTrial = () => {
                 </div>
                 <div className="ptagwrapper">
                   <div className="ptag">
-                  <input type="text" placeholder="Your Company Business Email" />
+                  <input type="text" placeholder="Your Company Business Name" />
                   </div>
                 </div>
 
                 <div className="Freetrial">
                     <div className="Button">
-                        <button onClick={handleroutechange}>Start Trial Now</button>
+                        <button onClick={handlesignup}>Start Trial Now</button>
                     </div>
                 </div>
             </div>

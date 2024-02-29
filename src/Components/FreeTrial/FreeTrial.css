@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 .maincontainer{
@@ -10,7 +11,7 @@
 }
 .mainwrapper{
     width:100vw;
-    height:90vh ;
+    height:90% ;
     background-color: white;
 }
 
@@ -30,7 +31,7 @@
     color: white;
 }
 .upperparttext h1{
- font-family: sans-serif;
+ font-family: raleway;
  font-size: 30px;
 }
 .middlepartwrapper{
@@ -42,7 +43,7 @@
     /* align-items: center; */
 }
 .middlepart{
-    width: 60%;
+    width: 45%;
     height: 60%;
     background-color: white;
     /* background-color: blue; */
@@ -70,8 +71,9 @@
     align-items: center;
 }
 .middleparttext h2{
-   font-size: 120%;
-   font-family: sans-serif;
+   font-size: 20px;
+   color: rgb(69, 65, 65);
+   font-family: raleway;
 }
 
 .ptagwrapper{
@@ -93,15 +95,18 @@
     width: 50%;
     height: 90%;
     border-radius: 5px;
+    font-family: raleway;
+    font-size: 14px;
+    font-weight: 500;
     /* border: black; */
-    border: 2px solid grey;
+    border: 1px solid darkgrey;
     outline: none;
 
     padding-inline: 20px;
 }
 
 .Freetrial{
-    width: 100%;
+    width: 80%;
     height: 30%;
     /* background-color: aqua; */
     display: flex;
@@ -124,7 +129,9 @@
     background-color: rgb(5, 120, 109);
     color: white;
     border: none;
-    font-size: 20px;
+    cursor: pointer;
+    font-family: raleway;
+    font-size: 15px;
 }
 
 

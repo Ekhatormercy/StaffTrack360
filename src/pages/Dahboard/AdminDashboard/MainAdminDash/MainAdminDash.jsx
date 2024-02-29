@@ -11,10 +11,18 @@ import AddEmployee from "../pages/AddEmployee/AddEmployee";
 import Performance from "../pages/Performances/Performance";
 import AddDepartment from "../pages/addDepartment/AddDepartment";
 import Profile from "../pages/Profile/Profile";
+import { useNavigate } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import RateEmployee from "../../HodDashboard/Pages/rateEmployee/RateEmployee";
 import Task from "../task/Task";
 const MainAdminDash = () => {
+
+  const nav = useNavigate()
+
+  const handlelogout =()=>{
+    nav("/decisionpage")
+  }
+
   const [active, setActive] = useState("Active");
   const [performance, setPerformance] = useState(true);
   const [dept, setDept] = useState(false);
@@ -85,9 +93,7 @@ const MainAdminDash = () => {
             </div>
             <div className="logout">
               <button
-                onClick={() => {
-                  nav("/");
-                }}
+                
               >
                 LOGOUT
               </button>
