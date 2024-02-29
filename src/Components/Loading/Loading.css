@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.loadingcontainer{
+    width:100vw ;
+    height: 100vh;
+    /* background-color: pink; */
+}
+.loadingwrapper{
+    width:100%;
+    height: 40%;
+    background-color: rgb(5, 120, 109);
+}
+
+.loadbox{
+    width: 50%;
+    height: 50%;
+    background-color: white;
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     position: absolute;
+     z-index: 99999;
+     bottom: 0;
+     left: 250px;
+     bottom: 130px;
+     border-radius: 30px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.loaderrortext{
+    width: 20%;
+    height: 20%;
+    /* background-color: yellow; */
+}
+.loaderrortext h1{
+  /* font-size: 50px; */
+  font-family: sans-serif;
+}
