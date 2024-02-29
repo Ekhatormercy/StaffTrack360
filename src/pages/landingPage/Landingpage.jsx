@@ -8,7 +8,6 @@ import { useState } from "react"
 import Footer from "../../Components/Footer/Footer"
 
 
-
 const Landingpage =()=>{
     const [show, setShow] = useState(false)
     return(
@@ -23,6 +22,7 @@ const Landingpage =()=>{
          <Thirdlayer/>
          <Fourthlayer/>
          <Footer/>
+
          
          </>
     )

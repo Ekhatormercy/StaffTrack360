@@ -12,8 +12,8 @@ const Header =({show, setShow})=>{
     const handlelogin =()=>{
         Nav("/login")
     }
-    const handlesignup =()=>{
-        Nav("/signup")
+    const handletrial =()=>{
+        Nav("/trialpage")
     }
 
 
@@ -47,7 +47,7 @@ const Header =({show, setShow})=>{
                 </div>
                 <div className="Upbuttndiv">
                 <button onClick={handlelogin} className={`loginbtn ${isScrolled ? 'login-scrolled' : ''}`}>Login</button>
-               <button onClick={handlesignup} className={`Trialbtn ${isScrolled ? 'signup-scrolled' : ''}`}>Sign Up</button>
+               <button onClick={handletrial} className={`Trialbtn ${isScrolled ? 'signup-scrolled' : ''}`}>Sign Up</button>
                   
                 </div>
                 <div className='burger' onClick={() => setShow(!show)}>
