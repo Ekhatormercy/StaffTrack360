@@ -68,6 +68,7 @@
         transform: scale(1);
         transition: all 250ms ease-in;
  }
+ 
     
     .LOGINBTN:hover{
         transform: scale(1.08);

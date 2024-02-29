@@ -2,7 +2,14 @@ import Button from "../../Components/buttons/Button"
 import Headerlgn from "../landingPage/Header/Headerlgn"
 import "./Login.css"
 import { useNavigate } from "react-router-dom"
-import LoginEmployee from "./LoginEmployee"
+// import LoginEmployee from "./LoginEmployee"
+// import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { set, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+import axios from "axios"
+import Loading from "../../Components/Loading/Loading";
+import { useState } from "react";
 const LoginasBusiness =()=>{
 
     const Nav = useNavigate()
@@ -13,17 +20,70 @@ const LoginasBusiness =()=>{
     const handletrial =()=>{
       Nav("/trialpage")
     }
+    // const [showPassword, setShowPassword] = useState(false)
+ 
+  const [loading, setLoading] =useState(false)
+  // const [show, setShow] = useState(false)
+
+//   const handleShowPassword = () => {
+//     console.log("object");
+//     setShowPassword(!showPassword)
+// }
+
+
+
+const schema = yup.object(). shape({
+  businessEmail: yup.string().email().required("Your email is required"),
+  password: yup.string().min(8).max(20).required("password must be a minimum of 8 characters")
+
+})
+
+const { register, 
+  handleSubmit, 
+  formState: { errors },
+} = useForm({
+   resolver: yupResolver(schema),
+   });
+
+   const onSubmit = async (data) =>{
+    try {
+      const res = await axios.post(
+           "https://staftrack360.onrender.com/api/v1/login",
+           data,
+        );
+        console.log(res)
+        Nav("/")
+        setLoading(false)
+        const {token} = res.data
+        localStorage.setItem("user", JSON.stringify({token}))
+        axios.defaults.headers.common["Authorization"] = `Bearer${token}`
+        console.log(token, "usertoken")
+
+   }catch(err){
+    console.log(err, 'err message')
+      setLoading(false)
+    
+   }
+   }
     return(
       <>
+       <form onSubmit={handleSubmit(onSubmit)}>
     <Headerlgn/>  
     <div className="loginbox">
         <div className="loginwrap">
           <h1 className="bizh1">Business Login</h1>
             <div className="inputdiv">
-                <input type="text" placeholder="Email" />
-                <input type="text" placeholder="Password" />
+                <input {...register("businessEmail")} type="text" placeholder="Enter Your Email"/>
+              <p className="err">{errors.businessEmail?.message}</p>
+                <input  {...register("password")} type="password" placeholder="Enter Your Password"/>
+              <p className="err">{errors.password?.message}</p>
                 
-                <button className="LOGINBTN">LOGIN</button>
+              {
+              loading ? (<p>Loading.........</p>) : (
+             <button className="LOGINBTN">LOGIN</button>
+
+                            )
+              }
                   <div className="signherediv">
             <p>Don't have an Account? <span onClick={handletrial}>Signup</span></p>
           </div>
@@ -32,6 +92,7 @@ const LoginasBusiness =()=>{
          
           </div>
         </div>
+        </form>
     
     </>
 

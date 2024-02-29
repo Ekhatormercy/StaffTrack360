@@ -67,9 +67,12 @@ const Signup = () => {
         data
       );
       console.log(res);
+      const adminInformation =res.data.data
+           localStorage.setItem("adminInformation", JSON.stringify({id:adminInformation._id, name:adminInformation.firstNameName, name:adminInformation.lastName, businessEmail:adminInformation.businessEmail, token: adminInformation.token}))
+          
 
       nav("/signupsuccesspage");
-      // console.log(userInformation)
+      console.log(adminInformation)
       setLoading(false);
     } catch (err) {
       console.log(err, "err message");
