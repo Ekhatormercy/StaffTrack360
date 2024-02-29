@@ -4,7 +4,7 @@
 }
 .MainConntainer{
   height: 100vh;
-  width: 100wh;
+  width: 100vw;
   /* background-color: green; */
   width: 100vw;
   display: flex;
@@ -17,16 +17,27 @@
   /* background-color: blue; */
   display: flex;
   align-items: end;
+  @media screen and (max-width:768px) {
+    width: 20%;
+    height: 100vh;
+  }
+  @media screen and (max-width:425px) {
+    display: none;
+  }
+
 }
 .rightSection{
   width: 100%;
   height: 100%;
-  /* background-color: pink; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  @media screen and (max-width:414px) {
+  @media screen and (max-width:768px[]) {
+    width: 100vw;
+    height: 100vh;
+  }
+  @media screen and (max-width:425px) {
     width: 100vw;
     height: 100vh;
   }
@@ -34,7 +45,10 @@
 .TopRightSection{
   width: 100%;
   height: 15%;
-  @media screen and (max-width:414px) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width:425px) {
     width: 100%;
     height: 10%;
   }
@@ -43,7 +57,7 @@
 .mainRightSection{
   width: 100%;
   height: 75%;
-  @media screen and (max-width:414px) {
+  @media screen and (max-width:425px) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +68,7 @@
 }
 .MainDashboard{
   width: 90%;
-  height: 85vh;
+  height: 80vh;
   /* background-color: red; */
   border-radius: 5px;
   border: solid 1px #00756A;
@@ -74,6 +88,13 @@
   border-radius: 0px 31px 0px 0px;
   /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
   font-family: "raleway";
+  @media screen and (max-width:768px) {
+   width: 15vw;
+   height: 95vh;
+  }
+  @media screen and (max-width:425px) {
+    display: none;
+   }
 }
 .sidebarMain{
   width: 95%;
@@ -96,6 +117,10 @@
   /* gap: 10px; */
   margin: 0px;
   padding: 0px;
+  @media screen and (max-width:768px) {
+   font-size: 10px;
+  }
+  
 }
 .item1{
   /* background-color: aliceblue; */

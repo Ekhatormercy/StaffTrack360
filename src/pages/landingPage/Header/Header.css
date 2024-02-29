@@ -87,6 +87,7 @@
     justify-content: flex-end;
     gap: 25px;
     cursor: pointer;
+    position: relative;
 }
 .loginbtn{
     font-size: 15px;
@@ -94,9 +95,36 @@
     background-color: transparent;
     color: white;
     font-weight: 700;
+    /* background-color: red; */
     cursor: pointer;
     transition: color 0.3s ease;
    
+}
+.logindrop{
+    width:10%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    top: 75px;
+  right: 0;
+  cursor: pointer;
+     margin-right: 20%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-evenly;
+     font-family: raleway;
+     font-size: 12px;
+     Line-height: 40px;
+ color: rgb(61, 56, 56);
+
+}
+hr{
+    width: 80%;
+}
+.logindrop h4:hover{
+    color: rgb(181,174, 196);;
 }
 .loginbtn.login-scrolled{
     color: rgb(0, 117, 106);

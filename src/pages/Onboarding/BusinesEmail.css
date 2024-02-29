@@ -5,7 +5,7 @@
 }
 .Businessemailbox{
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     background-color: white;
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@
 }
 .businessmainwrap input{
     width: 100%;
-    height: 10%;
+    height: 12%;
     border-radius: 10px;
     font-size: 15px;
     font-weight: 600;

@@ -14,6 +14,8 @@ import Loading from "./Components/Loading/Loading"
 import Emailsuccessful from "./Components/Emailsuccessful/Emailsuccessful"
 import Signupsuccessful from "./Components/Signupsuccessful/Signupsuccessful"
 import Choose from "./Components/Choose/Choose"
+import LoginEmployee from "./pages/Onboarding/LoginEmployee"
+import LoginasBusiness from "./pages/Onboarding/Login"
 function App() {
  
 
@@ -23,7 +25,8 @@ function App() {
    
       <Routes>
       <Route path='/' element={<Landingpage/>}/>
-      <Route path='/login' element={<Login/>}/>
+      <Route path='/loginasBusiness' element={<LoginasBusiness/>}/>
+      <Route path='/loginasEmployee' element={<LoginEmployee/>}/>
       <Route path='/businessmail' element={<BusinessEmail/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/changepass' element={<PasswordChange/>}/>
