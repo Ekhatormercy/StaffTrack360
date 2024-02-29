@@ -10,6 +10,9 @@ const LoginasBusiness =()=>{
     const handlemail=()=>{
         Nav("/businessmail")
     }
+    const handletrial =()=>{
+      Nav("/trialpage")
+    }
     return(
       <>
     <Headerlgn/>  
@@ -22,7 +25,7 @@ const LoginasBusiness =()=>{
                 
                 <button className="LOGINBTN">LOGIN</button>
                   <div className="signherediv">
-            <p>Don't have an Account? <span onClick={handlemail}>Signup</span></p>
+            <p>Don't have an Account? <span onClick={handletrial}>Signup</span></p>
           </div>
      </div>
          

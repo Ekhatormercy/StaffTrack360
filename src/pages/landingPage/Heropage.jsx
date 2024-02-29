@@ -1,7 +1,15 @@
 // import Button from "../../Components/buttons/Button"
 import heroimg from "../../assets/heroimg.webp"
+import { useNavigate } from "react-router"
 import "./Heropage.css"
+
+
 const Heropage =()=>{
+  const Nav = useNavigate()
+
+  const handletrialpage =()=>{
+   Nav("/trialpage")
+  }
     return(
       <div className="heropage">
         <div className="herowrap">
@@ -10,7 +18,7 @@ const Heropage =()=>{
             Bridging the Gap Between <br />Goals and Achievements.</h1>
             <p>Innovate, Motivate, Excel: Managing Performance <br />
           for Tomorrow's Success</p>
-          <button className="newtrailbtn">Start a Free Trail</button>
+          <button onClick={handletrialpage} className="newtrailbtn">Start a Free Trail</button>
           </div>
           <div className="heroright">
             <img src={heroimg} alt="" />
