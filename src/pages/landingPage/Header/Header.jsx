@@ -25,6 +25,9 @@ const Header =({show, setShow})=>{
     const handlesignup =()=>{
         Nav("/signup")
     }
+    const handleOurService =()=>{
+        Nav("/ourservice")
+    }
 
 
   useEffect(() => {
@@ -52,6 +55,7 @@ const Header =({show, setShow})=>{
                     <p style={{color: "orange"}}>Home</p>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Service</p>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>About Us</p>
+                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Payment</p>
     
                  
                 </div>

@@ -9,6 +9,7 @@ import PasswordChange from './pages/Onboarding/Passwordchange'
 import MainAdminDash from './pages/Dahboard/AdminDashboard/MainAdminDash/MainAdminDash'
 import LoginEmployee from "./pages/Onboarding/LoginEmployee"
 import LoginasBusiness from "./pages/Onboarding/Login"
+import Secondlayer from "./pages/landingPage/secondlayer/Secondlayer"
 function App() {
  
 
@@ -24,6 +25,7 @@ function App() {
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/changepass' element={<PasswordChange/>}/>
       <Route path='/dashboard/*' element={<MainAdminDash/>} />
+      <Route path='/ourservice' element={<Secondlayer/>} />
      
 
       </Routes>
