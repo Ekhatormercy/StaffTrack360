@@ -22,7 +22,10 @@ const MainAdminDash = () => {
   const handlelogout =()=>{
     nav("/decisionpage")
   }
-
+  const handlelogoutYes =()=>{
+    nav("/")
+  }
+  const [pop, setPop] = useState (false)
   const [active, setActive] = useState("Active");
   const [performance, setPerformance] = useState(true);
   const [dept, setDept] = useState(false);
@@ -55,6 +58,7 @@ const MainAdminDash = () => {
   };
 
   return (
+    <>
     <div className="MainConntainer">
       <div className="leftSection">
         {/* <Sidebar/> */}
@@ -92,7 +96,7 @@ const MainAdminDash = () => {
               </div>
             </div>
             <div className="logout">
-              <button
+              <button  onClick={()=>{setPop(true)}}
                 
               >
                 LOGOUT
@@ -123,6 +127,23 @@ const MainAdminDash = () => {
         
    
     </div>
+
+ {
+  pop ? 
+   <div className="popbody">
+  <div className="popcard">
+    <div className="popwrap">
+      <h1>Are You Sure?</h1>
+      <div className="YesNo">
+        <button onClick={handlelogoutYes} className="yesbtn">YES</button>
+        <button onClick={()=>setPop(false)} className="yesbtn">NO</button>
+      </div>
+    </div>
+  </div>
+
+</div>:null
+ }
+  </>
   );
 };
 

@@ -24,6 +24,15 @@ const Signup = () => {
   };
   const nav =useNavigate()
 
+  const handlesignin =()=>{
+    nav("/login")
+
+  }
+  const handlesignup =()=>{
+    nav("/signupsuccesspage")
+
+  }
+
   const { adminData, setAdminData } = useContext(MyContext);
 
   const schema = yup.object().shape({
@@ -59,7 +68,7 @@ const Signup = () => {
       );
       console.log(res);
 
-      nav("/dashboard/*");
+      nav("/signupsuccesspage");
       // console.log(userInformation)
       setLoading(false);
     } catch (err) {
@@ -141,7 +150,7 @@ const Signup = () => {
             </div>
             <div className="sgnin">
               <p>
-                Already have an account? <span>Sign in</span>
+                Already have an account? <span onClick={handlesignin}>Sign in</span>
               </p>
             </div>
           </div>
