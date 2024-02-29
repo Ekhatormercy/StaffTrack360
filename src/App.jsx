@@ -16,6 +16,7 @@ import Signupsuccessful from "./Components/Signupsuccessful/Signupsuccessful"
 import Choose from "./Components/Choose/Choose"
 import LoginEmployee from "./pages/Onboarding/LoginEmployee"
 import LoginasBusiness from "./pages/Onboarding/Login"
+import Secondlayer from "./pages/landingPage/secondlayer/Secondlayer"
 function App() {
  
 
@@ -31,6 +32,7 @@ function App() {
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/changepass' element={<PasswordChange/>}/>
       <Route path='/dashboard/*' element={<MainAdminDash/>} />
+      <Route path='/ourservice' element={<Secondlayer/>} />
       <Route path='/trialpage' element={<FreeTrial/>} />
       <Route path='/successpage' element={<SuccessfulTrial/>} />
       <Route path='/verifypage' element={<Verifyerror/>} />

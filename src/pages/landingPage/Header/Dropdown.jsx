@@ -4,6 +4,9 @@ const Dropdown = () => {
   const handlelogin =()=>{
     Nav("/login")
 }
+  const handlesignup =()=>{
+    Nav("")
+}
   return (
     <div className="Dropdown">
       <div className="sidehold">
@@ -14,7 +17,7 @@ const Dropdown = () => {
         </div>
         <div className="BUTTONDIV">
             <button onClick={handlelogin} className="droplogin">Login</button>
-            <button className="dropsign">Sign Up</button>
+            <button  className="dropsign">Sign Up</button>
         </div>
       </div>
     </div>

@@ -12,8 +12,8 @@
     align-items: center;
 }
 .signupwrap{
-    width: 40%;
-    height: 90%;
+    width: 35%;
+    height: 95%;
     /* background-color: grey; */
     border-radius: 10px;
     border: 2px solid #00756A;
@@ -25,8 +25,8 @@
     
 }
 .inputwrapSignup{
-  width: 70%;
-  height: 85%;
+  width: 78%;
+  height: 90%;
   /* background-color: pink; */
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@
 }
 .inputwrapSignup input{
     width: 90%;
-    height: 11%;
+    height: 15%;
     padding-inline: 10px;
     border-radius: 8px;
     outline: none;
@@ -49,7 +49,7 @@
 }
 .signuppbtn{
     width: 140px;
-    height: 9%;
+    height: 12%;
     border: none;
     border-radius: 6px;
     color: white;
@@ -69,6 +69,48 @@
     display: flex;
     justify-content: flex-end;
 }
+.err{
+    width: 95%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    /* background-color: grey; */
+    font-size: 12px;
+    color: red;
+}
+.inputii{
+    width: 90%;
+    height: 15%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.inputwrapSignup .inputii input{
+    width: 88%;
+    height: 100%;
+    /* background-color: red; */
+    padding-inline: 10px;
+    /* border-radius: 8px; */
+    outline: none;
+    font-size: 15px;
+    font-family: "raleway";
+    font-weight: 600;
+    outline: none;
+    color: gray;
+    border: 1px solid #545454;
+}
+
+.eyediv{
+    width: 12%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid #545454;
+    justify-content: center;
+    align-items: center;
+}
 .sgnin p{
   font-family: "raleway";
   font-weight: 500;
@@ -78,10 +120,20 @@
     cursor: pointer;
     font-weight: 600;
 }
+.AiOutlineEye {
+    cursor: pointer;
+    font-size: 25px;
+    color: #00756A;
+}
+.AiOutlineEyeInvisible{
+    cursor: pointer;
+    font-size: 25px;
+    color: #00756A;  
+}
 @media screen and (max-width :1178px){
     .signupwrap{
         width: 85%;
-        height: 85%;
+        height: 90%;
         /* background-color: grey; */
         border-radius: 10px;
         border: 2px solid #00756A;
@@ -101,9 +153,17 @@
         flex-direction: column;
         justify-content: space-evenly;
       }
+      .inputii{
+        width: 95%;
+        height: 15%;
+        /* background-color: aqua; */
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
       .inputwrapSignup input{
         width: 95%;
-        height: 11%;
+        height: 15%;
         padding-inline: 10px;
         border-radius: 8px;
         outline: none;
@@ -118,7 +178,7 @@
     .sgnin p{
         font-family: "raleway";
         font-weight: 500;
-        font-size: 17px;
+        font-size: 15px;
       }
       .sgnin span{
           color: #00756A;
