@@ -4,14 +4,16 @@ import Heropage from "./Heropage"
 import Thirdlayer from "./thirdlayer/Thirdlayer"
 import Header from "./Header/Header"
 import Dropdown from "./Header/Dropdown"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Footer from "../../Components/Footer/Footer"
+// import './LandingPage.css'
 
+// const footerRef = useRef(null)
 
 const Landingpage =()=>{
     const [show, setShow] = useState(false)
     return(
-         <>
+         <div className="LandingpageContainer">
             <Header show={show} setShow={setShow}/>
       {
    show === true? <Dropdown/> :null
@@ -24,7 +26,7 @@ const Landingpage =()=>{
          <Footer/>
 
          
-         </>
+         </div>
     )
 }
 export default Landingpage
