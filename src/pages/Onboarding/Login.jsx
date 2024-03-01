@@ -8,6 +8,7 @@ import { set, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import axios from "axios"
+import { SpinnerDotted } from "spinners-react";
 import Loading from "../../Components/Loading/Loading";
 import { useState } from "react";
 const LoginasBusiness =()=>{
@@ -52,12 +53,16 @@ const { register,
            data,
         );
         console.log(res)
-        Nav("/")
+        Nav("/dashboard/*")
         setLoading(false)
-        const {token} = res.data
-        localStorage.setItem("user", JSON.stringify({token}))
-        axios.defaults.headers.common["Authorization"] = `Bearer${token}`
-        console.log(token, "usertoken")
+        const token = res.data.data
+        localStorage.setItem("token", JSON.stringify({token:token.token}))
+
+        // localStorage.setItem("user", JSON.stringify({token}))
+        // axios.defaults.headers.common["Authorization"] = `Bearer${token}`
+        // console.log(token, "usertoken")
+
+   console.log(token)
 
    }catch(err){
     console.log(err, 'err message')
@@ -74,16 +79,20 @@ const { register,
           <h1 className="bizh1">Business Login</h1>
             <div className="inputdiv">
                 <input {...register("businessEmail")} type="text" placeholder="Enter Your Email"/>
-              <p className="err">{errors.businessEmail?.message}</p>
+              <p className="err1">{errors.businessEmail?.message}</p>
                 <input  {...register("password")} type="password" placeholder="Enter Your Password"/>
-              <p className="err">{errors.password?.message}</p>
+              <p className="err1">{errors.password?.message}</p>
                 
-              {
-              loading ? (<p>Loading.........</p>) : (
-             <button className="LOGINBTN">LOGIN</button>
+            
+             <button className="LOGINBTN"  
+              >
+             {
+                loading ? <SpinnerDotted size={30} color='white'/> :  "LOGIN"
+             }
+             </button>
 
-                            )
-              }
+                            
+              
                   <div className="signherediv">
             <p>Don't have an Account? <span onClick={handletrial}>Signup</span></p>
           </div>
