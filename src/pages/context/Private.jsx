@@ -4,12 +4,12 @@ import { Navigate, Outlet } from 'react-router-dom'
 
 const PrivatePage = () => {
   // const {userToken} = useContext(AppContext)
-  const userDetail = JSON.parse(localStorage.getItem("userData"))
-  console.log(userDetail?.data.token)
+  const userToken = JSON.parse(localStorage.getItem("token"))
+  console.log(userToken?.data.token)
   return (
     <div>
       {
-        userDetail?.data.token ? (<Outlet/>) : (<Navigate to="/"/>)
+        userToken?.data.token ? (<Outlet/>) : (<Navigate to="/"/>)
       }
     </div>
   )
