@@ -3,7 +3,7 @@ import Headerlgn from "../landingPage/Header/Headerlgn"
 import "./Login.css"
 import { useNavigate } from "react-router-dom"
 // import LoginEmployee from "./LoginEmployee"
-// import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { set, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
@@ -21,15 +21,16 @@ const LoginasBusiness =()=>{
     const handletrial =()=>{
       Nav("/trialpage")
     }
-    // const [showPassword, setShowPassword] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
  
   const [loading, setLoading] =useState(false)
+  const [password1, setPassword] = useState("");
   // const [show, setShow] = useState(false)
 
-//   const handleShowPassword = () => {
-//     console.log("object");
-//     setShowPassword(!showPassword)
-// }
+  const handleShowPassword = () => {
+    console.log("object");
+    setShowPassword(!showPassword)
+}
 
 
 
@@ -80,7 +81,29 @@ const { register,
             <div className="inputdiv">
                 <input {...register("businessEmail")} type="text" placeholder="Enter Your Email"/>
               <p className="err1">{errors.businessEmail?.message}</p>
-                <input  {...register("password")} type="password" placeholder="Enter Your Password"/>
+              <div className="loginpass">
+                <input type= {showPassword ? "text" : "password"}
+                 placeholder="Enter Your Password"
+                {...register("password")} 
+                onChange={(e) => setPassword(e.target.value)} 
+                />
+                   {
+                    showPassword ? (
+                    <AiOutlineEye
+                      onClick={handleShowPassword}
+                      className="AiOutlineEye"
+                    />
+                  ) : (
+                    <AiOutlineEyeInvisible
+                      className="AiOutlineEyeInvisible"
+                      onClick={handleShowPassword}
+                    />
+                  )}
+                  </div>
+               
+              
+              
+
               <p className="err1">{errors.password?.message}</p>
                 
             
@@ -100,7 +123,8 @@ const { register,
          
          
           </div>
-        </div>
+          </div>
+        
         </form>
     
     </>

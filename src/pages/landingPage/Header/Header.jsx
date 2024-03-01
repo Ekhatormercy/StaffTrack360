@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 // import { FcMenu } from 'react-icons/fc';
 import { HiMenu } from "react-icons/hi";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -27,7 +27,10 @@ const Header =({show, setShow})=>{
         Nav("/trialpage")
     }
    
-
+// const footerRef = useRef(null);
+// const handleServiceContainer = (()=>{})
+//   footerRef.current.scrollIntoView({behavior: "smooth"});
+// }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +55,7 @@ const Header =({show, setShow})=>{
                 </div>
                 <div className={`Navdiv ${isScrolled ? 'text-scrolled' : ''}`}>
                     <p style={{color: "orange"}}>Home</p>
-                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Service</p>
+                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`} >Service</p>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>About Us</p>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Payment</p>
     
@@ -78,6 +81,7 @@ const Header =({show, setShow})=>{
         </div>:null
          }
             </div>
+
         </div>
     )
 }

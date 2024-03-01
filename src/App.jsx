@@ -27,6 +27,7 @@ function App() {
    
       <Routes>
       <Route path='/' element={<Landingpage/>}/>
+      <Route path="/secondlayer" element={<Secondlayer/>}/>
       <Route path='/loginasBusiness' element={<LoginasBusiness/>}/>
       <Route path='/loginasEmployee' element={<LoginEmployee/>}/>
       <Route path='/businessmail' element={<BusinessEmail/>}/>

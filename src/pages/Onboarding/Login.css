@@ -26,10 +26,11 @@
 }
 .inputdiv{
     width: 85%;
-    height: 80%;
+    height: 70%;
     /* background-color: blueviolet; */
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     justify-content: space-evenly;
     /* gap: 30px; */
     /* align-items: center; */
@@ -52,6 +53,27 @@
     color: gray;
     border: 1px solid #545454;
 
+}
+.loginpass{
+    width: 80%;
+    height: 15%;
+    /* background-color: red; */
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid #545454; 
+    align-items: center;
+}
+.loginpass input{
+    width: 85%;
+    height: 90%;
+    padding-inline: 10px;
+    font-size: 15px;
+    font-family: "raleway";
+    font-weight: 600;
+    outline: none;
+    color: gray;
+    border: none;
+    /* border: 1px solid #545454;  */
 }
 .LOGINBTN{
         cursor: pointer;
@@ -133,6 +155,7 @@
             font-family: "raleway";
             font-weight: 600;
             outline: none;
+            /* display: flex; */
             color: gray;
             border: 1px solid #545454;
 
