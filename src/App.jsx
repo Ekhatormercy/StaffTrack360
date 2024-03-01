@@ -17,6 +17,7 @@ import Choose from "./Components/Choose/Choose"
 import LoginEmployee from "./pages/Onboarding/LoginEmployee"
 import LoginasBusiness from "./pages/Onboarding/Login"
 import Secondlayer from "./pages/landingPage/secondlayer/Secondlayer"
+import PrivatePage from "./pages/context/Private"
 function App() {
  
 
@@ -40,6 +41,9 @@ function App() {
       <Route path='/emailsuccesspage' element={<Emailsuccessful/>} />
       <Route path='/signupsuccesspage' element={<Signupsuccessful/>} />
       <Route path='/decisionpage' element={<Choose/>} />
+      <Route element = {<PrivatePage/>}>
+          <Route path='/dashboard/*' element={<MainAdminDash/>}/>
+          </Route>
      
 
       </Routes>
