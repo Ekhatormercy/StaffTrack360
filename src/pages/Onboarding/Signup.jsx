@@ -18,6 +18,7 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
   const [password1, setPassword] = useState("");
 
+
   const handleShowPassword = () => {
     console.log("object");
     setShowPassword(!showPassword);
@@ -32,13 +33,29 @@ const Signup = () => {
     nav("/signupsuccesspage")
 
   }
+  const isFreeEmailDomain = (domain) => {
+    const freeEmailDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', /* Add more if needed */];
+    return freeEmailDomains.includes(domain);
+  };
+  
+  const isBusinessEmail = (email) => {
+    const domain = email.split('@')[1];
 
-  const { adminData, setAdminData } = useContext(MyContext);
+    return !isFreeEmailDomain(domain);
+  };
+
 
   const schema = yup.object().shape({
     firstName: yup.string().min(3).required("Your firstName is Required"),
     lastName: yup.string().min(3).required("Your lastName is Required"),
-    businessEmail: yup.string().email("invalid business email").required("Your email is Required"),
+    businessEmail: yup.string().email("invalid business email").required("Your email is Required")  .test('business-email', 'Email must be a business email', function (value) {
+      if (!value) {
+        return true;
+      }
+
+      return isBusinessEmail(value);
+    })
+    .required('Email is required'),
     businessName: yup.string().min(3).required("Your BusinessName is Required"),
     phoneNumber: yup
       .string()
@@ -48,7 +65,11 @@ const Signup = () => {
       .string()
       .min(8)
       .max(20)
-      .required("Password must be a minimum of 8 Characters"),
+      .required("Password must be a minimum of 8 Characters")
+      .matches(
+        /^(?=.*[!@#$%^&])(?=.*[A-Z]).{8,}$/,
+        "Password must contain at least one uppercase letter, one special character, and be at least 8 characters long"
+      ),
   });
 
   const {
@@ -79,6 +100,9 @@ const Signup = () => {
       setLoading(false);
     }
   };
+
+  
+
 
   // const url = `https://staftrack360.onrender.com/api/v1/signup`
 
@@ -148,7 +172,7 @@ const Signup = () => {
               >
                {
                 loading ? <SpinnerDotted size={30} color='white'/> :  "SIGN UP"
-             }
+               }
               </button>
             </div>
             <div className="sgnin">

@@ -36,7 +36,7 @@ const loginasEmployee =()=>{
 
 const schema = yup.object(). shape({
   businessEmail: yup.string().email().required("Your email is required"),
-  password: yup.string().min(8).max(20).required("password must be a minimum of 8 characters")
+  password: yup.string().min(8).max(20).required("password is required")
 
 })
 
@@ -49,19 +49,18 @@ const { register,
 
    const onSubmit = async (data) =>{
     try {
+      setLoading(true);
       const res = await axios.post(
            "https://staftrack360.onrender.com/api/v1/login",
            data,
         );
         console.log(res)
         Nav("/dashboard/*")
-        setLoading(false)
+        setLoading(false);
         const token = res.data.data
         localStorage.setItem("token", JSON.stringify({token:token.token}))
 
-        // localStorage.setItem("user", JSON.stringify({token}))
-        // axios.defaults.headers.common["Authorization"] = `Bearer${token}`
-        // console.log(token, "usertoken")
+       
 
    console.log(token)
 
