@@ -2,9 +2,11 @@ import "./Seclayer.css"
 import { OurServicesData } from "../../../Components/Data"
 
 import rateimg from "../../../assets/rateimg.png"
-const Secondlayer =()=>{
+
+const Secondlayer = ()=>{
+    
     return(
-        <div className="Seclayerdiv">
+        <div  className="Seclayerdiv">
             <div className="secwrap">
                 <div className="Ourserviceh1textdiv">
                     <h1>Our Services</h1>
@@ -31,4 +33,5 @@ const Secondlayer =()=>{
         </div>
     )
 }
+    
 export default Secondlayer

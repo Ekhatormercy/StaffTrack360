@@ -38,7 +38,7 @@ const Signup = () => {
   const schema = yup.object().shape({
     firstName: yup.string().min(3).required("Your firstName is Required"),
     lastName: yup.string().min(3).required("Your lastName is Required"),
-    businessEmail: yup.string().email().required("Your email is Required"),
+    businessEmail: yup.string().email("invalid business email").required("Your email is Required"),
     businessName: yup.string().min(3).required("Your BusinessName is Required"),
     phoneNumber: yup
       .string()
@@ -71,7 +71,7 @@ const Signup = () => {
 
           
 
-      nav("/signupsuccesspage");
+      nav("/loginasBusiness");
       console.log(adminInformation)
       setLoading(false);
     } catch (err) {
