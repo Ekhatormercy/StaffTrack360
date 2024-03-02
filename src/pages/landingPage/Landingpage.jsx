@@ -6,7 +6,7 @@ import Header from "./Header/Header"
 import Dropdown from "./Header/Dropdown"
 import { useState, useRef } from "react"
 import Footer from "../../Components/Footer/Footer"
-// import './LandingPage.css'
+import './LandingPage.css'
 
 // const footerRef = useRef(null)
 
@@ -19,12 +19,14 @@ const Landingpage =()=>{
    show === true? <Dropdown/> :null
        }
          <Heropage/>
-         <Secondlayer/>
+        <section id="seclayer">
+        <Secondlayer/>
+        </section>
         
          <Thirdlayer/>
          <Fourthlayer/>
          <Footer/>
-
+     
          
          </div>
     )
