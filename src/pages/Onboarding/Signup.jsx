@@ -44,6 +44,7 @@ const Signup = () => {
     return !isFreeEmailDomain(domain);
   };
 
+  // const { adminData, setAdminData } = useContext(MyContext);
 
   const schema = yup.object().shape({
     firstName: yup.string().min(3).required("Your firstName is Required"),
@@ -89,7 +90,7 @@ const Signup = () => {
       );
       console.log(res);
       const adminInformation =res.data.data
-           localStorage.setItem("adminInformation", JSON.stringify({id:adminInformation._id, name:adminInformation.firstNameName, name:adminInformation.lastName, businessEmail:adminInformation.businessEmail, token: adminInformation.token}))
+
           
 
       nav("/loginasBusiness");
