@@ -42,8 +42,8 @@
     font-size: 20px;
 }
 .inputdiv input{
-    width: 80%;
-    height: 13%;
+    width: 92%;
+    height: 15%;
     border-radius: 8px;
     padding-inline: 10px;
     font-size: 15px;
@@ -187,4 +187,25 @@
         color: red;
         font-style: italic;
         font-size: 15px;
+    }
+    .loginpass input{
+        width: 85%;
+        height: 90%;
+        padding-inline: 10px;
+        font-size: 15px;
+        font-family: "raleway";
+        font-weight: 600;
+        outline: none;
+        color: gray;
+        border: none;
+        /* border: 1px solid #545454;  */
+    }
+    .loginpass{
+        width: 93%;
+        height: 15%;
+        /* background-color: red; */
+        display: flex;
+        border-radius: 8px;
+        border: 1px solid #545454; 
+        align-items: center;
     }
