@@ -12,19 +12,19 @@ import Performance from "../pages/Performances/Performance";
 import AddDepartment from "../pages/addDepartment/AddDepartment";
 import Profile from "../pages/Profile/Profile";
 import { useNavigate } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
+// import { Route, Routes } from "react-router-dom";
 import RateEmployee from "../../HodDashboard/Pages/rateEmployee/RateEmployee";
 import Task from "../task/Task";
 
 const MainAdminDash = () => {
   const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"));
   const nav = useNavigate();
-
+  console.log(userInfo._id)
   async function handlelogoutYes() {
     try {
       const res = await axios.post(
-        "https://staftrack360.onrender.com/api/v1/signout/65d8a15e1863c9c5745e81bb",
-        userInfo
+        `https://staftrack360.onrender.com/api/v1/signout/${userInfo._id}`, 
+        {}
       );
       localStorage.clear(userInfo);
       nav("/");
@@ -32,6 +32,8 @@ const MainAdminDash = () => {
       console.log("error from API", err);
     }
   }
+  
+  
 
   const [pop, setPop] = useState(false);
   const [active, setActive] = useState("Active");

@@ -43,7 +43,7 @@ import Headerlgn from "../landingPage/Header/Headerlgn"
 import "./Login.css"
 import { useNavigate } from "react-router-dom"
 // import LoginEmployee from "./LoginEmployee"
-// import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { set, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
