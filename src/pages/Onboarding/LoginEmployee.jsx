@@ -1,42 +1,4 @@
 
-// import Headerlgn from "../landingPage/Header/Headerlgn"
-// import "./Login.css"
-// import { useNavigate } from "react-router-dom"
-// const LoginEmployee =()=>{
-
-//     const Nav = useNavigate()
-
-//     const handlemail=()=>{
-//         Nav("/businessmail")
-//     }
-//     const handletrial =()=>{
-//       Nav("/trialpage")
-//     }
-//     return(
-//       <>
-//     <Headerlgn/>  
-//     <div className="loginbox">
-//         <div className="loginwrap">
-//            <h1 className="bizh1">Employee Login</h1>
-//             <div className="inputdiv">
-//                 <input type="text" placeholder="Email" />
-//                 <input type="text" placeholder="Password" />
-                
-//                 <button className="LOGINBTN">LOGIN</button>
-//                   <div className="signherediv">
-//             <p>Don't have an Account? <span onClick={handletrial}>Signup</span></p>
-//           </div>
-//      </div>
-         
-         
-//           </div>
-//         </div>
-    
-//     </>
-
-//     )
-// }
-// export default LoginEmployee
 
 import Button from "../../Components/buttons/Button"
 import Headerlgn from "../landingPage/Header/Headerlgn"
@@ -58,6 +20,7 @@ import { useState } from "react";
 const loginasEmployee = () => {
   // const { userInfo, setUserInfo } = useContext(MyContext)
   const [isError, setIsError] = useState('')
+  const [showPassword, setShowPassword] =useState(false)
   const Nav = useNavigate()
   const [loading, setLoading] = useState(false)
   const handlemail = () => {
@@ -67,7 +30,10 @@ const loginasEmployee = () => {
     Nav("/trialpage")
   }
 
-
+  const handleShowPassword = () => {
+    console.log("object");
+    setShowPassword(!showPassword);
+  };
 
   const schema = yup.object().shape({
     businessEmail: yup.string().email().required("Your email is required"),
@@ -98,10 +64,7 @@ const loginasEmployee = () => {
 
     
 
-      // const { token } = res.data;
-      // localStorage.setItem("user", JSON.stringify({ token }));
-      // axios.defaults.headers.common["Authorization"] = `Bearer${token}`;
-      // Set userInfo to the response data
+      
       setLoading(false);
       Nav("/dashboard/*");
     } catch (err) {
@@ -128,25 +91,7 @@ const loginasEmployee = () => {
           <h1 className="bizh1">Employee Login</h1>
             <div className="inputdiv">
               <input {...register("email")} type="text" placeholder="Enter Your Email" />
-              <p className="err">{errors.businessEmail?.message}</p>
-              <input  {...register("password")} type="password" placeholder="Enter Your Password" />
-              <p className="err">{errors.password?.message}</p>
-              <p className="errorMessageTag">{isError}</p>
-              {
-                loading ? (<p>Loading.........</p>) : (
-                  <button className="LOGINBTN">LOGIN</button>
-                  
-
-                )
-              }
-             
-              <div className="signherediv">
-                <p>Don't have an Account? <span onClick={handletrial}>Signup</span></p>
-              </div>
-            </div>
-
-
-                <input {...register("businessEmail")} type="text" placeholder="Enter Your Email"/>
+        
               <p className="err1">{errors.businessEmail?.message}</p>
               <div className="loginpass">
                 <input type= {showPassword ? "text" : "password"}
@@ -186,6 +131,8 @@ const loginasEmployee = () => {
                   <div className="signherediv">
             <p>Don't have an Account? <span onClick={handletrial}>Signup</span></p>
           </div>
+     </div>
+         
      </div>
          
          

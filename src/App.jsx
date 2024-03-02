@@ -42,6 +42,7 @@ function App() {
           <Route path='/emailsuccesspage' element={<Emailsuccessful />} />
           <Route path='/signupsuccesspage' element={<Signupsuccessful />} />
           <Route path='/decisionpage' element={<Choose />} />
+          <Route path="/changepassword" element = {<PasswordChange/>}/>
           <Route element={<PrivatePage />}>
             <Route path='/dashboard/*' element={<MainAdminDash />} />
           </Route>
