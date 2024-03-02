@@ -183,3 +183,8 @@
             font-size: 18px;
         }
     }
+    .errorMessageTag{
+        color: red;
+        font-style: italic;
+        font-size: 15px;
+    }
