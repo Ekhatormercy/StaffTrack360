@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import "./AddEmployee.css"
+import axios from 'axios'
 
 
 const AddEmployee = () => {
-[userInfo2, setUserInfo2] = useState()
+const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"))
+const [userInfo2, setUserInfo2] = useState()
 const [name, setName] = useState('')
 const [email, setEmail] = useState('')
 const [department, setDepartment] = useState('')
@@ -15,22 +17,31 @@ const AddEmployeeInput = {
   department:department,
   role:role
 }
-
+console.log(userInfo._id)
 async function handleAddEmployee() {
   try {
-    setLoading(true);
+    const token = localStorage.getItem("loginUserInfo.token");
+    const userInfo = JSON.parse(localStorage.getItem("loginUserInfo")); 
+
     const res = await axios.post(
-      "https://staftrack360.onrender.com/api/v1/addStaff/65d7af55ec77f213c8ff8978",
-      AddEmployeeInput
+      `https://staftrack360.onrender.com/api/v1/addStaff/${userInfo._id}`,
+      { AddEmployeeInput }, 
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
     );
-    console.log(res)
-    
-    // localStorage.setItem('UserInfo2', JSON.stringify(res.data.data))
+
+    console.log(res.data);
+    setUserInfo2(res.data.data);
+    console.log(userInfo2); 
+    localStorage.setItem('userInfo2', JSON.stringify(res.data.data));
   } catch (err) {
-    console.log("Error from api", err);
-   
+    console.error("Error from API", err);
   }
 }
+
 
   return (
     <div className='AddEmployee'>
