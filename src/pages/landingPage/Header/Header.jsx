@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import {Link as ScrollLink} from "react-scroll"
 // import { FcMenu } from 'react-icons/fc';
 import { HiMenu } from "react-icons/hi";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -26,11 +27,7 @@ const Header =({show, setShow})=>{
     const handletrial =()=>{
         Nav("/trialpage")
     }
-   
-// const footerRef = useRef(null);
-// const handleServiceContainer = (()=>{})
-//   footerRef.current.scrollIntoView({behavior: "smooth"});
-// }
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +52,16 @@ const Header =({show, setShow})=>{
                 </div>
                 <div className={`Navdiv ${isScrolled ? 'text-scrolled' : ''}`}>
                     <p style={{color: "orange"}}>Home</p>
-                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`} >Service</p>
+                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`} ></p>
+                    <ScrollLink
+              to="seclayer"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+               <p>Services</p>
+            </ScrollLink>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>About Us</p>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Payment</p>
     
