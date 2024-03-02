@@ -13,6 +13,7 @@ import { useContext } from "react";
 import { MyContext } from "../context/AppContext";
 import { SpinnerDotted } from "spinners-react";
 
+
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
