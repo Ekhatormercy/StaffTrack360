@@ -49,15 +49,13 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import axios from "axios"
 import Loading from "../../Components/Loading/Loading";
-// import { useContext, useEffect, useState } from "react";
-// import { MyContext } from "../context/AppContext";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUserInfo } from "../../Redux/State";
 import { useState } from "react";
 
 
 
-const LoginasBusiness = () => {
+const loginasEmployee = () => {
   // const { userInfo, setUserInfo } = useContext(MyContext)
   const [isError, setIsError] = useState('')
   const Nav = useNavigate()
@@ -119,82 +117,8 @@ const LoginasBusiness = () => {
   // console.log(loginInfo)
 
 
-  return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Headerlgn />
-        <div className="loginbox">
-          <div className="loginwrap">
-            <h1 className="bizh1">Employee's Login</h1>
-// import LoginEmployee from "./LoginEmployee"
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { set, useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
-import axios from "axios"
-import { SpinnerDotted } from "spinners-react";
-import Loading from "../../Components/Loading/Loading";
-import { useState } from "react";
-const loginasEmployee =()=>{
+  
 
-    const Nav = useNavigate()
-
-    const handlemail=()=>{
-        Nav("/businessmail")
-    }
-    const handletrial =()=>{
-      Nav("/trialpage")
-    }
-    const [showPassword, setShowPassword] = useState(false)
- 
-  const [loading, setLoading] =useState(false)
-  const [password1, setPassword] = useState("");
-  // const [show, setShow] = useState(false)
-
-  const handleShowPassword = () => {
-    console.log("object");
-    setShowPassword(!showPassword)
-}
-
-
-
-const schema = yup.object(). shape({
-  businessEmail: yup.string().email().required("Your email is required"),
-  password: yup.string().min(8).max(20).required("password must be a minimum of 8 characters")
-
-})
-
-const { register, 
-  handleSubmit, 
-  formState: { errors },
-} = useForm({
-   resolver: yupResolver(schema),
-   });
-
-   const onSubmit = async (data) =>{
-    try {
-      const res = await axios.post(
-           "https://staftrack360.onrender.com/api/v1/login",
-           data,
-        );
-        console.log(res)
-        Nav("/dashboard/*")
-        setLoading(false)
-        const token = res.data.data
-        localStorage.setItem("token", JSON.stringify({token:token.token}))
-
-        // localStorage.setItem("user", JSON.stringify({token}))
-        // axios.defaults.headers.common["Authorization"] = `Bearer${token}`
-        // console.log(token, "usertoken")
-
-   console.log(token)
-
-   }catch(err){
-    console.log(err, 'err message')
-      setLoading(false)
-    
-   }
-   }
     return(
       <>
        <form onSubmit={handleSubmit(onSubmit)}>
@@ -265,9 +189,7 @@ const { register,
      </div>
          
          
-          </div>
-        </div>
-      </form>
+      
 
           </div>
         
@@ -278,4 +200,3 @@ const { register,
   )
 }
 export default loginasEmployee
-export default LoginasBusiness
