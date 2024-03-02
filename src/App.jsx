@@ -18,38 +18,39 @@ import LoginEmployee from "./pages/Onboarding/LoginEmployee"
 import LoginasBusiness from "./pages/Onboarding/Login"
 import Secondlayer from "./pages/landingPage/secondlayer/Secondlayer"
 import PrivatePage from "./pages/context/Private"
+import PrivateRoute from "./pages/context/Private"
 function App() {
- 
+
 
   return (
     <>
-    <HashRouter>
-   
-      <Routes>
-      <Route path='/' element={<Landingpage/>}/>
-      <Route path='/loginasBusiness' element={<LoginasBusiness/>}/>
-      <Route path='/loginasEmployee' element={<LoginEmployee/>}/>
-      <Route path='/businessmail' element={<BusinessEmail/>}/>
-      <Route path='/signup' element={<Signup/>}/>
-      <Route path='/changepass' element={<PasswordChange/>}/>
-      <Route path='/dashboard/*' element={<MainAdminDash/>} />
-      <Route path='/ourservice' element={<Secondlayer/>} />
-      <Route path='/trialpage' element={<FreeTrial/>} />
-      <Route path='/successpage' element={<SuccessfulTrial/>} />
-      <Route path='/verifypage' element={<Verifyerror/>} />
-      <Route path='/loadingpage' element={<Loading/>} />
-      <Route path='/emailsuccesspage' element={<Emailsuccessful/>} />
-      <Route path='/signupsuccesspage' element={<Signupsuccessful/>} />
-      <Route path='/decisionpage' element={<Choose/>} />
-      <Route element = {<PrivatePage/>}>
-          <Route path='/dashboard/*' element={<MainAdminDash/>}/>
-          </Route>
-     
+      <HashRouter>
 
-      </Routes>
-    </HashRouter>
-     
-      
+        <Routes>
+          <Route path='/' element={<Landingpage />} />
+          <Route path='/loginasBusiness' element={<LoginasBusiness />} />
+          <Route path='/loginasEmployee' element={<LoginEmployee />} />
+          <Route path='/businessmail' element={<BusinessEmail />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/changepass' element={<PasswordChange />} />
+          {/* <Route path='/dashboard/*' element={<MainAdminDash />} /> */}
+          <Route path='/ourservice' element={<Secondlayer />} />
+          <Route path='/trialpage' element={<FreeTrial />} />
+          <Route path='/successpage' element={<SuccessfulTrial />} />
+          <Route path='/verifypage' element={<Verifyerror />} />
+          <Route path='/loadingpage' element={<Loading />} />
+          <Route path='/emailsuccesspage' element={<Emailsuccessful />} />
+          <Route path='/signupsuccesspage' element={<Signupsuccessful />} />
+          <Route path='/decisionpage' element={<Choose />} />
+          <Route element={<PrivatePage />}>
+            <Route path='/dashboard/*' element={<MainAdminDash />} />
+          </Route>
+
+
+        </Routes>
+      </HashRouter>
+
+
     </>
   )
 }

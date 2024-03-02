@@ -18,7 +18,7 @@ const Heropage =()=>{
             Bridging the Gap Between <br />Goals and Achievements.</h1>
             <p>Innovate, Motivate, Excel: Managing Performance <br />
           for Tomorrow's Success</p>
-          <button onClick={handletrialpage} className="newtrailbtn">Start a Free Trail</button>
+          <button onClick={handletrialpage} className="newtrailbtn">Start a Free Trial</button>
           </div>
           <div className="heroright">
             <img src={heroimg} alt="" />
