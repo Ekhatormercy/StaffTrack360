@@ -17,20 +17,17 @@ const AddEmployeeInput = {
   department:department,
   role:role
 }
+console.log(AddEmployeeInput)
 console.log(userInfo._id)
 async function handleAddEmployee() {
   try {
-    const token = localStorage.getItem("loginUserInfo.token");
+    // const token = localStorage.getItem("loginUserInfo.token");
     const userInfo = JSON.parse(localStorage.getItem("loginUserInfo")); 
 
     const res = await axios.post(
       `https://staftrack360.onrender.com/api/v1/addStaff/${userInfo._id}`,
-      { AddEmployeeInput }, 
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
+      AddEmployeeInput, 
+      
     );
 
     console.log(res.data);

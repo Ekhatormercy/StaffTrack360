@@ -93,6 +93,7 @@ const LoginasBusiness = () => {
               <input  {...register("password")} type="password" placeholder="Enter Your Password" />
               <p className="err">{errors.password?.message}</p>
               <p className="errorMessageTag">{isError}</p>
+              <p><span>Forgotten Passowrd</span></p>
               {
                 loading ? (<p>Loading.........</p>) : (
                   <button className="LOGINBTN">LOGIN</button>

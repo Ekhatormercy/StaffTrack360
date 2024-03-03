@@ -3,6 +3,7 @@ import "./Profile.css"
 import { FaCircleUser } from "react-icons/fa6";
 
 const Profile = () => {
+  const userInfo= JSON.parse(localStorage.getItem("loginUserInfo"))
   return (
     <div className='Profile'>
       <div className='ProfilePics'>
@@ -12,23 +13,23 @@ const Profile = () => {
       <div className='ProfileDetails'>
         <div className='ProfileDetails1'>
           <p>Name</p>
-          <p>Favour Chukwu</p>
+          <p>{userInfo.firstName} {userInfo.lastName}</p>
         </div>
         <div className='ProfileDetails1'>
         <p>Email</p>
-          <p>Favourchukwu@businessmail.com</p>
+          <p>{userInfo.businessEmail}</p>
         </div>
         <div className='ProfileDetails1'>
         <p>Phone</p>
-          <p>07099542445</p>
+          <p>{userInfo.phoneNumber}</p>
         </div>
         <div className='ProfileDetails1'>
         <p>Department</p>
-          <p>Finance</p>
+          <p>{userInfo.department}</p>
         </div>
         <div className='ProfileDetails1'>
         <p>Role</p>
-          <p>Cashier</p>
+          <p>{userInfo.role}</p>
         </div>
       </div>
     </div>

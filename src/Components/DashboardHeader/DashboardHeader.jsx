@@ -11,7 +11,7 @@ const DashboardHeader = () => {
     <div className='DashboardHeader'>
       <img className='dashboardHeaderLogo' src={logogrn} alt="Logo" />
         <div className='menu'><IoMenu color='#00756A' size={30}/></div>
-      <h4 className='dashboardHeaderText'>Welcome...</h4>
+      <h4 className='dashboardHeaderText'>{userInfo.businessName}</h4>
       <div className='userProfile'>
         <div className='Initials'>ET</div>
         <div className='ProfileDetail'>
