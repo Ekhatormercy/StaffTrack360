@@ -33,7 +33,7 @@ async function handleAddEmployee() {
     console.log(res.data);
     setUserInfo2(res.data.data);
     console.log(userInfo2); 
-    localStorage.setItem('userInfo2', JSON.stringify(res.data.data));
+    // localStorage.setItem('userInfo2', JSON.stringify(res.data.data));
   } catch (err) {
     console.error("Error from API", err);
   }

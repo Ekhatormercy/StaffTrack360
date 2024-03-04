@@ -8,7 +8,7 @@ const Heropage =()=>{
   const Nav = useNavigate()
 
   const handletrialpage =()=>{
-   Nav("/trialpage")
+   Nav("/signup")
   }
     return(
       <div className="heropage">
