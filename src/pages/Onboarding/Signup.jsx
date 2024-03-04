@@ -206,8 +206,8 @@ const Signup = () => {
                   Business Name  below</p>
                   <input
                     type="email"
-                    placeholder="Business Email"
-                    {...register("businessEmail")}
+                    placeholder="Business Name"
+                    {...register("businessName")}
                   />
                 <p className="err">{errors.businessName?.message}</p>
                 <button onClick={handleBuinessName} className="Continuebtn">CONTINUE</button>
