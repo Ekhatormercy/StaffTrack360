@@ -145,7 +145,7 @@ const LoginasBusiness = () => {
               <button className="LOGINBTN"  
               >
              {
-                loading ? <SpinnerCircular size={30} color='white'/> :  "LOGIN"
+                loading ? <SpinnerDotted size={30} color='white'/> :  "LOGIN"
              }
              </button>
 

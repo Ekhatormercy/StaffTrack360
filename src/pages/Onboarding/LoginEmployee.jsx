@@ -14,7 +14,7 @@ import Loading from "../../Components/Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUserInfo } from "../../Redux/State";
 import { useState } from "react";
-import { SpinnerCircular } from "spinners-react";
+import { SpinnerCircular, SpinnerDotted } from "spinners-react";
 
 
 
@@ -122,7 +122,7 @@ const loginasEmployee = () => {
              <button className="LOGINBTN"  
               >
              {
-                loading ? <SpinnerCircular size={30} color='white'/> :  "LOGIN"
+                loading ? <SpinnerDotted size={30} color='white'/> :  "LOGIN"
              }
              </button>
 
