@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import "./AddEmployee.css"
 import axios from 'axios'
+import { SpinnerDotted } from "spinners-react";
+import { useNavigate } from 'react-router-dom';
 
 
 const AddEmployee = () => {
 const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"))
 const [userInfo2, setUserInfo2] = useState()
+const [loading, setLoading] = useState(false);
 const [name, setName] = useState('')
 const [email, setEmail] = useState('')
 const [department, setDepartment] = useState('')
@@ -17,8 +20,9 @@ const AddEmployeeInput = {
   department:department,
   role:role
 }
+const Nav=useNavigate()
 console.log(AddEmployeeInput)
-console.log(userInfo._id)
+// console.log(userInfo._id)
 async function handleAddEmployee() {
   try {
     // const token = localStorage.getItem("loginUserInfo.token");
@@ -29,13 +33,16 @@ async function handleAddEmployee() {
       AddEmployeeInput, 
       
     );
-
+      
     console.log(res.data);
+    
     setUserInfo2(res.data.data);
+    
     console.log(userInfo2); 
     // localStorage.setItem('userInfo2', JSON.stringify(res.data.data));
   } catch (err) {
     console.error("Error from API", err);
+    setLoading(false);
   }
 }
 
@@ -51,7 +58,14 @@ async function handleAddEmployee() {
           <input type="email" placeholder='Email' onChange={(e)=>setEmail(e.target.value)}/>
           <input type="text" placeholder='Department' onChange={(e)=>setDepartment(e.target.value)}/>
           <input type="text" placeholder='Role' onChange={(e)=>setRole(e.target.value)}/>
-          <button onClick={handleAddEmployee}>ADD EMPLOYEE</button>
+          <button
+           onClick={handleAddEmployee}
+
+          >
+           {
+                   
+            loading ? <SpinnerDotted size={30} color='white' /> : "ADD EMPLOYEE"
+           }  </button>
       </div>
     </div>
   )
