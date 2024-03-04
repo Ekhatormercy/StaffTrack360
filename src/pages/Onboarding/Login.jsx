@@ -10,7 +10,8 @@ import * as yup from "yup"
 import axios from "axios"
 import { SpinnerDotted } from "spinners-react";
 import Loading from "../../Components/Loading/Loading";
-
+// import { useContext, useEffect, useState } from "react";
+// import { MyContext } from "../context/AppContext";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUserInfo } from "../../Redux/State";
 import { useState } from "react";
@@ -18,9 +19,8 @@ import { useState } from "react";
 
 
 const LoginasBusiness = () => {
- 
+  // const { userInfo, setUserInfo } = useContext(MyContext)
   const [isError, setIsError] = useState('')
-  const [showPassword, setShowPassword] =useState(false)
   const Nav = useNavigate()
   const [loading, setLoading] = useState(false)
   const handlemail = () => {
@@ -89,7 +89,10 @@ const LoginasBusiness = () => {
 
     
 
-     
+      // const { token } = res.data;
+      // localStorage.setItem("user", JSON.stringify({ token }));
+      // axios.defaults.headers.common["Authorization"] = `Bearer${token}`;
+      // Set userInfo to the response data
       setLoading(false);
       Nav("/dashboard/*");
     } catch (err) {
@@ -137,17 +140,16 @@ const LoginasBusiness = () => {
 
             
               <p className="err1">{errors.password?.message}</p>
-              {/* <p className="errorMessageTag">{isError}</p> */}
-              <button className="LOGINBTN"
-              >
+            
               {
-                loading ?  <SpinnerDotted size={30} color='white'/> :  "LOGIN" 
-
-              }
-                 </button>
+                loading ? (<p>Loading.........</p>) : (
+                  <button className="LOGINBTN">LOGIN</button>
                   
 
-               <div className="signherediv">
+                )
+              }
+             
+              <div className="signherediv">
                 <p>Don't have an Account? <span onClick={handletrial}>Signup</span></p>
               </div>
             </div>
