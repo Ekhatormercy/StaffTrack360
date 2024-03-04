@@ -90,11 +90,11 @@ const loginasEmployee = () => {
         <div className="loginwrap">
           <h1 className="bizh1">Employee Login</h1>
             <div className="inputdiv">
-              <input {...register("email")} type="text" placeholder="Enter Your Email" />
+              <input required {...register("email")} type="text" placeholder="Enter Your Email" />
         
               <p className="err1">{errors.businessEmail?.message}</p>
               <div className="loginpass">
-                <input type= {showPassword ? "text" : "password"}
+                <input required type= {showPassword ? "text" : "password"}
                  placeholder="Enter Your Password"
                 {...register("password")} 
                 onChange={(e) => setPassword(e.target.value)} 

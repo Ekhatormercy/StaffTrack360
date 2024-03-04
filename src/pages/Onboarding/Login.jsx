@@ -30,11 +30,39 @@ const LoginasBusiness = () => {
     Nav("/trialpage")
   }
 
+  
+  const handleShowPassword = () => {
+    console.log("object");
+    setShowPassword(!showPassword);
+  };
+
+  const isFreeEmailDomain = (domain) => {
+    const freeEmailDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', /* Add more if needed */];
+    return freeEmailDomains.includes(domain);
+  };
+  
+  const isBusinessEmail = (email) => {
+    const domain = email.split('@')[1];
+
+    return !isFreeEmailDomain(domain);
+  };
+ 
+
 
 
   const schema = yup.object().shape({
-    businessEmail: yup.string().email().required("Your email is required"),
-    password: yup.string().min(8).max(20).required("password must be a minimum of 8 characters")
+    businessEmail: yup.string().email("invalid business email").required("Your email is Required")  .test('business-email', 'Email must be a business email', function (value) {
+      if (!value) {
+        return true;
+      }
+
+      return isBusinessEmail(value);
+    })
+    .required('Email is required'),
+    password: yup.string().min(8).max(20).required("password must be a minimum of 8 characters")  .matches(
+      /^(?=.*[!@#$%^&])(?=.*[A-Z]).{8,}$/,
+      "Password must contain at least one uppercase letter, one special character, and be at least 8 characters long"
+    ),
 
   })
   const dispatch = useDispatch()
@@ -88,12 +116,31 @@ const LoginasBusiness = () => {
           <div className="loginwrap">
             <h1 className="bizh1">Business Login</h1>
             <div className="inputdiv">
-              <input {...register("businessEmail")} type="text" placeholder="Enter Your Email" />
-              <p className="err">{errors.businessEmail?.message}</p>
-              <input  {...register("password")} type="password" placeholder="Enter Your Password" />
-              <p className="err">{errors.password?.message}</p>
-              <p className="errorMessageTag">{isError}</p>
-              <p><span>Forgotten Passowrd</span></p>
+              <input required {...register("businessEmail")} type="text" placeholder="Enter Your Email" />
+              <p className="err1">{errors.businessEmail?.message}</p>
+              <div className="loginpass">
+                <input required type= {showPassword ? "text" : "password"}
+                 placeholder="Enter Your Password"
+                {...register("password")} 
+                onChange={(e) => setPassword(e.target.value)} 
+                />
+                  {
+                    showPassword ? (
+                    <AiOutlineEye
+                      onClick={handleShowPassword}
+                      className="AiOutlineEye"
+                    />
+                  ) : (
+                    <AiOutlineEyeInvisible
+                      className="AiOutlineEyeInvisible"
+                      onClick={handleShowPassword}
+                    />
+                  )}
+                  </div>
+
+            
+              <p className="err1">{errors.password?.message}</p>
+            
               {
                 loading ? (<p>Loading.........</p>) : (
                   <button className="LOGINBTN">LOGIN</button>
