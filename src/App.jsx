@@ -40,7 +40,7 @@ function App() {
           <Route path='/verifypage' element={<Verifyerror />} />
           <Route path='/loadingpage' element={<Loading />} />
           <Route path='/emailsuccesspage' element={<Emailsuccessful />} />
-          <Route path='/signupsuccesspage' element={<Signupsuccessful />} />
+          <Route path='/successpage1' element={<Signupsuccessful />} />
           <Route path='/decisionpage' element={<Choose />} />
           <Route path="/changepassword" element = {<PasswordChange/>}/>
           <Route element={<PrivatePage />}>
