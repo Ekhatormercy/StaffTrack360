@@ -106,7 +106,7 @@ const Signup = () => {
 
 
 
-      nav("/loginasBusiness");
+      nav('/successpage1');
       console.log(adminInformation)
       setLoading(false);
     } catch (err) {
