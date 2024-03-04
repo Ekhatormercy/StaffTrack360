@@ -4,6 +4,7 @@ import "./Signup.css";
 import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
+import greenlogo from "../../assets/greenlogo.png"
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -195,7 +196,7 @@ const Signup = () => {
             <div className="Businessmailwrap">
               <div className="businessmainwrap">
                 <div className="Bizlogodiv">
-                  <img src='' alt="" />
+                  <img src={greenlogo} alt="" />
                 </div>
                 <p>To experience our solution , Kindly enter your
                   Business Name  below</p>
