@@ -21,6 +21,7 @@ import { useState } from "react";
 const LoginasBusiness = () => {
   // const { userInfo, setUserInfo } = useContext(MyContext)
   const [isError, setIsError] = useState('')
+  const [showPassword, setShowPassword] =useState(false)
   const Nav = useNavigate()
   const [loading, setLoading] = useState(false)
   const handlemail = () => {
@@ -141,13 +142,13 @@ const LoginasBusiness = () => {
             
               <p className="err1">{errors.password?.message}</p>
             
-              {
-                loading ? (<p>Loading.........</p>) : (
-                  <button className="LOGINBTN">LOGIN</button>
-                  
+              <button className="LOGINBTN"  
+              >
+             {
+                loading ? <SpinnerCircular size={30} color='white'/> :  "LOGIN"
+             }
+             </button>
 
-                )
-              }
              
               <div className="signherediv">
                 <p>Don't have an Account? <span onClick={handletrial}>Signup</span></p>
