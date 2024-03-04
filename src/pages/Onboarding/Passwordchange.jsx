@@ -16,12 +16,11 @@ const PasswordChange =()=>{
     confirmPassword:confirmPassword
   }
   console.log(newPasswordDetails)
-  const employeeID="65e4d570c6e2fbf54f1facfd"
 
   async function handleChangePassword (){
     try{
       const res=await axios.post(
-        ` https://staftrack360.onrender.com/api/v1/resetStaff/${employeeID}`, newPasswordDetails
+        ` https://staftrack360.onrender.com/api/v1/resetStaff/${userInfo2._id}`, newPasswordDetails
       );
       console.log(res)
       Nav("/loginasEmployee")
