@@ -25,7 +25,7 @@ const Header =({show, setShow})=>{
         Nav("/loginasEmployee")
     }
     const handletrial =()=>{
-        Nav("/trialpage")
+        Nav("/signup")
     }
 
 

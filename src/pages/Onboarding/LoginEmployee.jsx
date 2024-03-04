@@ -14,6 +14,7 @@ import Loading from "../../Components/Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUserInfo } from "../../Redux/State";
 import { useState } from "react";
+import { SpinnerCircular } from "spinners-react";
 
 
 
@@ -36,7 +37,7 @@ const loginasEmployee = () => {
   };
 
   const schema = yup.object().shape({
-    businessEmail: yup.string().email().required("Your email is required"),
+    email: yup.string().email().required("Your email is required"),
     password: yup.string().min(8).max(20).required("password must be a minimum of 8 characters")
 
   })
@@ -57,10 +58,10 @@ const loginasEmployee = () => {
         "https://staftrack360.onrender.com/api/v1/logInStaff",
         data
       );
-      dispatch(loginUserInfo(res))
+      // dispatch(loginUserInfo2(res))
       // console.log("Response from Api", res);
       
-      localStorage.setItem('loginUserInfo', JSON.stringify(res.data.data))
+      localStorage.setItem('loginUserInfo2', JSON.stringify(res.data.data))
 
     
 
@@ -97,7 +98,6 @@ const loginasEmployee = () => {
                 <input required type= {showPassword ? "text" : "password"}
                  placeholder="Enter Your Password"
                 {...register("password")} 
-                onChange={(e) => setPassword(e.target.value)} 
                 />
                    {
                     showPassword ? (
@@ -122,7 +122,7 @@ const loginasEmployee = () => {
              <button className="LOGINBTN"  
               >
              {
-                loading ? <SpinnerDotted size={30} color='white'/> :  "LOGIN"
+                loading ? <SpinnerCircular size={30} color='white'/> :  "LOGIN"
              }
              </button>
 

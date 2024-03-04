@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Signup from "../../Onboarding/Signup";
 const Dropdown = () => {
   const Nav = useNavigate()
   const handlelogin =()=>{
@@ -17,7 +18,7 @@ const Dropdown = () => {
         </div>
         <div className="BUTTONDIV">
             <button onClick={handlelogin} className="droplogin">Login</button>
-            <button onClick={handletrialpage}  className="dropsign">Sign Up</button>
+            <button onClick={Signup}  className="dropsign">Sign Up</button>
         </div>
       </div>
     </div>
