@@ -31,9 +31,9 @@ const FreeTrial = () => {
                 </div>
 
                 <div className="Freetrial">
-                    <div className="Button">
+                  
                         <button onClick={handlesignup}>Start Trial Now</button>
-                    </div>
+                  
                 </div>
             </div>
         </div>

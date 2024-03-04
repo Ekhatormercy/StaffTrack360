@@ -116,6 +116,7 @@ const Signup = () => {
           <div className="signupwrap">
             <div className="inputwrapSignup">
               <input
+              required
                 type="text"
                 placeholder="First Name"
                 {...register("firstName")}
@@ -123,6 +124,7 @@ const Signup = () => {
               <p className="err">{errors.firstName?.message}</p>
 
               <input
+              required
                 type="text"
                 placeholder="Last Name"
                 {...register("lastName")}
@@ -130,18 +132,20 @@ const Signup = () => {
               <p className="err">{errors.lastName?.message}</p>
 
               <input
+              required
                 type="text"
                 placeholder="Business Name"
                 {...register("businessName")}
               />
               <p className="err">{errors.businessName?.message}</p>
               <input
-                type="email"
+                type="email" required
                 placeholder="Business Email"
                 {...register("businessEmail")}
               />
               <p className="err">{errors.businessEmail?.message}</p>
               <input
+              required
                 type="text"
                 placeholder="Phone Number"
                 {...register("phoneNumber")}
@@ -149,6 +153,7 @@ const Signup = () => {
               <p className="err">{errors.phoneNumber?.message}</p>
               <div className="inputii">
                 <input 
+                required
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   {...register("password")}
