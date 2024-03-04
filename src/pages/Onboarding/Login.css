@@ -32,8 +32,6 @@
     align-items: center;
     /* justify-content: center; */
     justify-content: space-evenly;
-    /* gap: 30px; */
-    /* align-items: center; */
     flex-direction: column;
 
 }
@@ -115,7 +113,7 @@
     }
     .err1{
         /* background-color: pink; */
-        width: 80%;
+        width: 90%;
         font-size: 12px;
         color: red;
     }
