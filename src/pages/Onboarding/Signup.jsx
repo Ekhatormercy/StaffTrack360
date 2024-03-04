@@ -197,7 +197,7 @@ const Signup = () => {
                 <div className="Bizlogodiv">
                   <img src='' alt="" />
                 </div>
-                <p>To experience our solution , kindly enter your
+                <p>To experience our solution , Kindly enter your
                   Business Name  below</p>
                   <input
                     type="email"
