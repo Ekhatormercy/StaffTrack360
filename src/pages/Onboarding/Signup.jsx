@@ -104,9 +104,13 @@ const Signup = () => {
       console.log(res);
       const adminInformation = res.data.data
 
-
-
+      setTimeout(() => {
+        nav('/loginasBusiness');
+        
+      }, 5000); 
       nav('/successpage1');
+
+      
       console.log(adminInformation)
       setLoading(false);
     } catch (err) {
