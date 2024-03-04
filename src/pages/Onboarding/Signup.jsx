@@ -198,7 +198,7 @@ const Signup = () => {
                   <img src='' alt="" />
                 </div>
                 <p>To experience our solution , kindly enter your
-                  business Name  below</p>
+                  Business Name  below</p>
                   <input
                     type="email"
                     placeholder="Business Email"
