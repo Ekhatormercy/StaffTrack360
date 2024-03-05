@@ -3,6 +3,7 @@ import Headerlgn from "../landingPage/Header/Headerlgn"
 import "./Signup.css"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
+
 // import { AppContext } from "../context/AppContext"
 
 import BusinessEmail from "./BusinessEmail"

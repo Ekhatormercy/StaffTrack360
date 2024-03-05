@@ -16,6 +16,9 @@ import Signupsuccessful from "./Components/Signupsuccessful/Signupsuccessful"
 import Choose from "./Components/Choose/Choose"
 import LoginEmployee from "./pages/Onboarding/LoginEmployee"
 import LoginasBusiness from "./pages/Onboarding/Login"
+import Paymentpage from "./Components/Paymentpage/Paymentpage"
+import ConfirmEmail from "./Components/ConfirmEmail/ConfirmEmail"
+import Aboutus from "./Components/About us/Aboutus"
 function App() {
  
 
@@ -38,6 +41,9 @@ function App() {
       <Route path='/emailsuccesspage' element={<Emailsuccessful/>} />
       <Route path='/signupsuccesspage' element={<Signupsuccessful/>} />
       <Route path='/decisionpage' element={<Choose/>} />
+      <Route path='/paypage' element={<Paymentpage/>} />
+      <Route path='/confirmpage' element={<ConfirmEmail/>} />
+      <Route path='/aboutpage' element={<Aboutus/>} />
      
 
       </Routes>

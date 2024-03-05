@@ -1,0 +1,138 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.ConfirmEmailcontainer{
+  width:100vw;
+  height: 100vh;
+ /* background-color: red; */
+}
+
+.logopart{
+    width: 100%;
+    height: 10%;
+    background-color:rgb(5, 120, 109);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.logo{
+    width: 17%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cardcontainer{
+    width: 100%;
+    height: 80%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardwrapper{
+    width: 40%;
+    height: 70%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+
+.cardfirsttext{
+    width:100%;
+    height: 30%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+}
+
+ .cardfirsttext h2{
+    display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     /* font-family: sans-serif;  */
+     align-items: center; 
+     font-size: 25px;
+     font-weight: 520;
+ } 
+
+.cardmiddletextwrapper{
+    width: 100%;
+    height: 50%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.cardmiddletext {
+    width: 70%;
+    height: 100%;
+    /* background-color: rgb(5, 120, 109); */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 1px;
+}
+ .cardmiddletext p {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+     align-items: center; 
+     padding-bottom: 20px; 
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     /* font-family: sans-serif; */
+     font-weight:600;
+ } 
+.cardtext{
+    width: 80%;
+    height: 70%;
+    background-color: aquamarine;
+}
+
+/* .lastcardtextcontainer{
+    width: 100%;
+    height: 40%;
+    /* background-color: blueviolet; */
+/* } */ */
+ .lastcardtext{
+    width: 100%;
+    height: 100%;
+     background-color:red; 
+     display: flex; 
+    justify-content: center; 
+     align-items: center; 
+     padding-top: 20px; 
+     color: grey; 
+ } 
+
+.lasttextcontainer{
+    width: 100%;
+    height:10%;
+    /* background-color:indigo ; */
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.lasttext{
+    width:40%;
+    height: 40%;
+    /* background-color: cornflowerblue; */
+}
+.lasttext p{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.lasttext span{
+color: rgb(5, 120, 109);
+}

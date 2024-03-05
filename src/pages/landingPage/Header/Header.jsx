@@ -25,6 +25,9 @@ const Header =({show, setShow})=>{
     const handletrial =()=>{
         Nav("/trialpage")
     }
+    const handleabout = ()=> {
+       Nav("/aboutpage")
+    }
 
 
   useEffect(() => {
@@ -50,14 +53,14 @@ const Header =({show, setShow})=>{
                 </div>
                 <div className={`Navdiv ${isScrolled ? 'text-scrolled' : ''}`}>
                     <p style={{color: "orange"}}>Home</p>
-                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Service</p>
-                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>About Us</p>
+                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`} >Service</p>
+                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`} onClick={handleabout}>About Us</p>
     
                  
                 </div>
                 <div className="Upbuttndiv">
                 <button className={`loginbtn ${isScrolled ? 'login-scrolled' : ''}`} onMouseOver={showdrop}>Login <RiArrowDownSLine /></button>
-               <button onClick={handlesignup} className={`Trialbtn ${isScrolled ? 'signup-scrolled' : ''}`}>Sign Up</button>
+               <button className={`Trialbtn ${isScrolled ? 'signup-scrolled' : ''}`}>Sign Up</button>
                   
                 </div>
                 <div className='burger' onClick={() => setShow(!show)}>
