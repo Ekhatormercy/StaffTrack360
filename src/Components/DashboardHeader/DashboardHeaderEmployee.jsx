@@ -15,8 +15,8 @@ const DashboardHeaderEMployee = () => {
       <div className='userProfile'>
         <div className='Initials'>ET</div>
         <div className='ProfileDetail'>
-             <h5>{`${userInfo2[0].fullName}`} </h5>
-             <h6>{userInfo2[0].role}</h6>
+             <h5>{`${userInfo2.fullName}`} </h5>
+             <h6>{userInfo2.role}</h6>
         </div>
       </div>
     </div>
