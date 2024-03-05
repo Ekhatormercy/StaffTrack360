@@ -17,14 +17,16 @@ import RateEmployee from "../../HodDashboard/Pages/rateEmployee/RateEmployee";
 import Task from "../task/Task";
 import { useEffect } from "react";
 import DashboardHeaderEMployee from "../../../../Components/DashboardHeader/DashboardHeaderEmployee";
+import ProfileEmployee from "../pages/Profile/ProfileEmployee";
+import TaskEmployee from "../task/TaskEmployee";
 
 const MainAdminDashEmployee = () => {
 
   const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"));
   const userInfo2 = JSON.parse(localStorage.getItem("loginUserInfo2"));
   const nav = useNavigate();
-  const userID=(userInfo2[0]._id)
-  const userToken=(userInfo2[0].token)
+  const userID=(userInfo2._id)
+  const userToken=(userInfo2.token)
   console.log(userToken)
   async function handlelogoutYes() {
     try {
@@ -53,6 +55,7 @@ const MainAdminDashEmployee = () => {
   const [employee, setEmployee] = useState(false);
   const [profile, setProfile] = useState(false);
   const [task, setTask] = useState(false);
+  const [taskEmployee, setTaskEmployee] = useState(false);
   const [rateEmployee, setRateEmployee] = useState(false);
 
   const changeStatePerformance = () => {
@@ -62,6 +65,7 @@ const MainAdminDashEmployee = () => {
     setProfile(false);
     setTask(false);
     setRateEmployee(false);
+    setTaskEmployee(false)
   };
 
   const changeStateDept = () => {
@@ -71,6 +75,7 @@ const MainAdminDashEmployee = () => {
     setProfile(false);
     setTask(false);
     setRateEmployee(false);
+    setTaskEmployee(false)
   };
 
   const changeStateEmployee = () => {
@@ -80,6 +85,7 @@ const MainAdminDashEmployee = () => {
     setProfile(false);
     setTask(false);
     setRateEmployee(false);
+    setTaskEmployee(false)
   };
 
   const changeStateProfile = () => {
@@ -89,24 +95,36 @@ const MainAdminDashEmployee = () => {
     setProfile(true);
     setTask(false);
     setRateEmployee(false);
+    setTaskEmployee(false)
   };
 
   const changeStateTask = () => {
     setPerformance(false);
     setDept(false);
     setEmployee(false);
-    setProfile(true);
+    setProfile(false);
     setTask(true);
     setRateEmployee(false);
+    setTaskEmployee(false)
   };
 
   const changeStateRateEmployee = () => {
     setPerformance(false);
     setDept(false);
     setEmployee(false);
-    setProfile(true);
+    setProfile(false);
     setTask(false);
     setRateEmployee(true);
+    setTaskEmployee(false)
+  };
+  const changeStateTaskEmployee = () => {
+    setPerformance(false);
+    setDept(false);
+    setEmployee(false);
+    setProfile(false);
+    setTask(false);
+    setRateEmployee(false);
+    setTaskEmployee(true)
   };
 
   return (
@@ -117,7 +135,7 @@ const MainAdminDashEmployee = () => {
             <div className="sidebarMain">
               <div className="freeSpaceTop"></div>
               <div className="menuItems">
-                {userInfo2[0].role === "Hod" ? (
+                {userInfo2.role === "hod" ? (
                   <>
                     <div
                       className={`item1 ${performance ? active : null} `}
@@ -134,21 +152,21 @@ const MainAdminDashEmployee = () => {
                       Profile
                     </div>
                     <div
-                      className={`item1 ${profile ? active : null} `}
+                      className={`item1 ${task ? active : null} `}
                       onClick={changeStateTask}
                     >
                       <FaUser />
                       Task
                     </div>
                     <div
-                      className={`item1 ${profile ? active : null} `}
+                      className={`item1 ${rateEmployee ? active : null} `}
                       onClick={changeStateRateEmployee}
                     >
                       <FaUser />
                       Rate Employee
                     </div>
                   </>
-                ) : userInfo2[0].role === "Employee" ? (
+                ) : userInfo2.role === "employee" ? (
                   <>
                     <div
                       className={`item1 ${performance ? active : null} `}
@@ -165,8 +183,8 @@ const MainAdminDashEmployee = () => {
                       Profile
                     </div>
                     <div
-                      className={`item1 ${profile ? active : null} `}
-                      onClick={changeStateTask}
+                      className={`item1 ${taskEmployee ? active : null} `}
+                      onClick={changeStateTaskEmployee}
                     >
                       <FaUser />
                       Task
@@ -192,12 +210,14 @@ const MainAdminDashEmployee = () => {
             ) : employee ? (
               <AddEmployee />
             ) : profile ? (
-              <Profile />
+              <ProfileEmployee />
             ) : task ? (
               <Task />
             ) : rateEmployee ? (
               <RateEmployee />
-            ) : null}
+            )  : taskEmployee ? (
+              <TaskEmployee />
+            ): null}
           </div>
         </div>
       </div>
