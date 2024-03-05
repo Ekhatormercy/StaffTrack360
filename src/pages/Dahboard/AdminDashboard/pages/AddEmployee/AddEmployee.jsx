@@ -15,11 +15,12 @@ const [department, setDepartment] = useState('')
 const [role, setRole] = useState('')
 
 const AddEmployeeInput = {
-  name:name,
+  fullName:name,
   email:email,
   department:department,
   role:role
 }
+
 const Nav=useNavigate()
 console.log(AddEmployeeInput)
 // console.log(userInfo._id)
@@ -28,7 +29,12 @@ async function handleAddEmployee() {
 
     const res = await axios.post(
       `https://staftrack360.onrender.com/api/v1/addStaff/${userInfo._id}`,
-      AddEmployeeInput, );
+      AddEmployeeInput,
+      {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`
+        }
+      } );
       
     console.log(res.data);
     setUserInfo2(res.data);

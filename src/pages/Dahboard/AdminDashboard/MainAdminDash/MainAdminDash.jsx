@@ -19,7 +19,7 @@ import Task from "../task/Task";
 const MainAdminDash = () => {
 
   const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"));
-  // const userInfo2 = JSON.parse(localStorage.getItem("loginUserInfo2"));
+  const userToken=userInfo.token
   const nav = useNavigate();
   // console.log(userInfo2[0]._id)
 
@@ -61,14 +61,32 @@ const MainAdminDash = () => {
     setRateEmployee(false);
   };
 
-  const changeStateDept = () => {
-    setPerformance(false);
-    setDept(true);
-    setEmployee(false);
-    setProfile(false);
-    setTask(false);
-    setRateEmployee(false);
-  };
+  async function changeStateDept(){
+    try {
+      const res = await axios.get(
+        `https://staftrack360.onrender.com/api/v1/alldepartment/${userInfo._id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${userToken}`
+          }
+        }
+      );
+      console.log(res)
+      const allStaffData=res.data.data
+      setPerformance(false);
+      setDept(true);
+      setEmployee(false);
+      setProfile(false);
+      setTask(false);
+      setRateEmployee(false);
+      console.log(allStaffData)
+      localStorage.setItem('allStaffData', JSON.stringify(res.data.data))
+    } catch (err){
+      console.log("error from API", err)
+    }
+  }
+
+  
 
   const changeStateEmployee = () => {
     setPerformance(false);
