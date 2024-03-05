@@ -25,21 +25,16 @@ console.log(AddEmployeeInput)
 // console.log(userInfo._id)
 async function handleAddEmployee() {
   try {
-    // const token = localStorage.getItem("loginUserInfo.token");
-    const userInfo = JSON.parse(localStorage.getItem("loginUserInfo")); 
 
     const res = await axios.post(
       `https://staftrack360.onrender.com/api/v1/addStaff/${userInfo._id}`,
-      AddEmployeeInput, 
-      
-    );
+      AddEmployeeInput, );
       
     console.log(res.data);
-    
-    setUserInfo2(res.data.data);
+    setUserInfo2(res.data);
     
     console.log(userInfo2); 
-    localStorage.setItem('userInfo2', JSON.stringify(res.data.data));
+    localStorage.setItem('loginUserInfo2', JSON.stringify(userInfo2));
   } catch (err) {
     console.error("Error from API", err);
     setLoading(false);

@@ -67,7 +67,7 @@ const loginasEmployee = () => {
 
       
       setLoading(false);
-      Nav("/dashboard/*");
+      Nav("/dashboardEmployee");
     } catch (err) {
       console.log("Error from api", err);
       setLoading(false);

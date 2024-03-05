@@ -15,26 +15,29 @@ import { useNavigate } from "react-router-dom";
 // import { Route, Routes } from "react-router-dom";
 import RateEmployee from "../../HodDashboard/Pages/rateEmployee/RateEmployee";
 import Task from "../task/Task";
-// import { useEffect } from "react";
-const MainAdminDash = () => {
+import { useEffect } from "react";
+import DashboardHeaderEMployee from "../../../../Components/DashboardHeader/DashboardHeaderEmployee";
+
+const MainAdminDashEmployee = () => {
 
   const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"));
-  // const userInfo2 = JSON.parse(localStorage.getItem("loginUserInfo2"));
+  const userInfo2 = JSON.parse(localStorage.getItem("loginUserInfo2"));
   const nav = useNavigate();
-  // console.log(userInfo2[0]._id)
-
+  const userID=(userInfo2[0]._id)
+  const userToken=(userInfo2[0].token)
+  console.log(userToken)
   async function handlelogoutYes() {
     try {
       const res = await axios.post(
-        `https://staftrack360.onrender.com/api/v1/signout/${userInfo._id}`, 
+        ` https://staftrack360.onrender.com/api/v1/logOut/${userID}`, 
         {},
         {
           headers: {
-            Authorization: `Bearer ${userInfo.token}`
+            Authorization: `Bearer ${userToken}`
           }
         }
       );
-      localStorage.clear(userInfo);
+      localStorage.clear(userInfo2);
       nav("/");
     } catch (err) {
       console.log("error from API", err);
@@ -114,7 +117,7 @@ const MainAdminDash = () => {
             <div className="sidebarMain">
               <div className="freeSpaceTop"></div>
               <div className="menuItems">
-                
+                {userInfo2[0].role === "Hod" ? (
                   <>
                     <div
                       className={`item1 ${performance ? active : null} `}
@@ -124,18 +127,35 @@ const MainAdminDash = () => {
                       Performances
                     </div>
                     <div
-                      className={`item1 ${dept ? active : null} `}
-                      onClick={changeStateDept}
+                      className={`item1 ${profile ? active : null} `}
+                      onClick={changeStateProfile}
                     >
-                      <FcDepartment />
-                      Department
+                      <FaUser />
+                      Profile
                     </div>
                     <div
-                      className={`item1 ${employee ? active : null} `}
-                      onClick={changeStateEmployee}
+                      className={`item1 ${profile ? active : null} `}
+                      onClick={changeStateTask}
                     >
-                      <IoPersonAddOutline />
-                      Add Employee
+                      <FaUser />
+                      Task
+                    </div>
+                    <div
+                      className={`item1 ${profile ? active : null} `}
+                      onClick={changeStateRateEmployee}
+                    >
+                      <FaUser />
+                      Rate Employee
+                    </div>
+                  </>
+                ) : userInfo2[0].role === "Employee" ? (
+                  <>
+                    <div
+                      className={`item1 ${performance ? active : null} `}
+                      onClick={changeStatePerformance}
+                    >
+                      <CgProfile />
+                      Performances
                     </div>
                     <div
                       className={`item1 ${profile ? active : null} `}
@@ -144,8 +164,15 @@ const MainAdminDash = () => {
                       <FaUser />
                       Profile
                     </div>
+                    <div
+                      className={`item1 ${profile ? active : null} `}
+                      onClick={changeStateTask}
+                    >
+                      <FaUser />
+                      Task
+                    </div>
                   </>
-                
+                ) : null}
               </div>
               <div className="logout">
                 <button onClick={() => setPop(true)}>LOGOUT</button>
@@ -155,7 +182,7 @@ const MainAdminDash = () => {
         </div>
         <div className="rightSection">
           <div className="TopRightSection">
-            <DashboardHeader />
+            <DashboardHeaderEMployee />
           </div>
           <div className="MainDashboard">
             {performance ? (
@@ -196,4 +223,4 @@ const MainAdminDash = () => {
   );
 };
 
-export default MainAdminDash;
+export default MainAdminDashEmployee;
