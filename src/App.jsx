@@ -19,6 +19,8 @@ import LoginasBusiness from "./pages/Onboarding/Login"
 import Secondlayer from "./pages/landingPage/secondlayer/Secondlayer"
 import PrivatePage from "./pages/context/Private"
 import PrivateRoute from "./pages/context/Private"
+import PrivatePageEmployee from "./pages/context/PrivateEmployee"
+import MainAdminDashEmployee from "./pages/Dahboard/AdminDashboard/MainAdminDash/MainAdminDashEmployees"
 function App() {
 
 
@@ -43,8 +45,12 @@ function App() {
           <Route path='/successpage1' element={<Signupsuccessful />} />
           <Route path='/decisionpage' element={<Choose />} />
           <Route path="/changepassword" element = {<PasswordChange/>}/>
+          {/* <Route path='/dashboard/' element={<MainAdminDash />} /> */}
           <Route element={<PrivatePage />}>
             <Route path='/dashboard/*' element={<MainAdminDash />} />
+          </Route>
+          <Route element={<PrivatePageEmployee/>}>
+              <Route path="/dashboardEmployee/*" element={<MainAdminDashEmployee/>}/>
           </Route>
 
 
