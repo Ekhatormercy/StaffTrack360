@@ -177,6 +177,7 @@ const MainAdminDash = () => {
             {
               show === true? <Dropdowndash/>:null
             } */}
+            <DashboardHeader/>
           </div>
           <div className="MainDashboard">
             {performance ? (
