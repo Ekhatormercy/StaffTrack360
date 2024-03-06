@@ -200,7 +200,7 @@ backdrop-filter: blur(10px);
     
 }
 .Dropdown div{
-    font-size: 20px;
+    font-size: 15px;
     color:  rgb(0, 117, 106);
     gap: 50px;
     font-weight: 600;
@@ -228,24 +228,36 @@ backdrop-filter: blur(10px);
     
 }
 .droplogin{
-    font-size: 20px;
+    width: 90%;
+    height: 25%;
+    font-size: 15px;
     font-family: "raleway";
-    border: none;
-    background-color: transparent;
+    border: 2px solid   rgb(0, 117, 106) ;
+    /* background-color: transparent; */
     color: rgb(0, 117, 106);
     font-weight: 700;
     transition: color 0.3s ease;
+    cursor: pointer;
     
+}
+.droplogin:hover{
+    background-color:  rgb(0, 117, 106);
+    color: white;
 }
 .dropsign{
     cursor: pointer;
     width: 90%;
     color:  white;
    border-radius: 8px;
+   border: none;
     height: 25%;
     background-color: rgb(0, 117, 106);
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: 700;
     font-family: "raleway";
+}
+.dropsign:hover{
+   background-color: rgb(131, 125, 125);
 }
 
 @media screen and (max-width :1178px){
@@ -259,6 +271,7 @@ backdrop-filter: blur(10px);
   .burger{
     display: flex;
     color: #fff;
+    cursor: pointer;
 
   }
   .Upbuttndiv{

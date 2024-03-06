@@ -3,6 +3,8 @@ import "./AddEmployee.css"
 import axios from 'axios'
 import { SpinnerDotted } from "spinners-react";
 import { useNavigate } from 'react-router-dom';
+import { css } from '@emotion/react';
+import { HashLoader } from 'react-spinners';
 
 
 const AddEmployee = () => {
@@ -40,9 +42,12 @@ async function handleAddEmployee() {
     
     console.log(userInfo2); 
     localStorage.setItem('userInfo2', JSON.stringify(res.data.data));
+    setLoading(false);
   } catch (err) {
+    
     console.error("Error from API", err);
     setLoading(false);
+    
   }
 }
 
@@ -58,14 +63,41 @@ async function handleAddEmployee() {
           <input type="email" placeholder='Email' onChange={(e)=>setEmail(e.target.value)}/>
           <input type="text" placeholder='Department' onChange={(e)=>setDepartment(e.target.value)}/>
           <input type="text" placeholder='Role' onChange={(e)=>setRole(e.target.value)}/>
-          <button
+          {/* <button
            onClick={handleAddEmployee}
 
           >
            {
                    
             loading ? <SpinnerDotted size={30} color='white' /> : "ADD EMPLOYEE"
-           }  </button>
+           }  
+           </button> */}
+
+<button
+        onClick={handleAddEmployee}
+        //  className="signuppbtn"
+        disabled={loading}
+        style={{ position: 'relative',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center' }}
+      >
+        {loading && (
+          <HashLoader
+            css={css`
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            `}
+            color="#ffffff"
+            loading={loading}
+            size={30}
+          />
+        )}
+        {loading ? "siginup.." : 'ADD EMPLOYEE'}
+      </button>
       </div>
     </div>
   )
