@@ -60,7 +60,7 @@ const Header =({show, setShow})=>{
               offset={-70}
               duration={500}
             >
-               <p>Services</p>
+               <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Services</p>
             </ScrollLink>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>About Us</p>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Payment</p>

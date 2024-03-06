@@ -201,10 +201,13 @@ backdrop-filter: blur(10px);
 }
 .Dropdown div{
     font-size: 15px;
+    /* background-color: red; */
     color:  rgb(0, 117, 106);
-    gap: 50px;
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
     font-weight: 600;
-    border-bottom: 1px solid lightgray;
     cursor: pointer;
     font-family: "raleway";
   
@@ -212,8 +215,8 @@ backdrop-filter: blur(10px);
 .border{
    width: 100%;
    height: 18%;
-   /* background-color: green; */
-   border-bottom: 1px solid lightgray;
+   background-color: green;
+   /* border-bottom: 1px solid lightgray; */
    display: flex;
    align-items: center;
 }

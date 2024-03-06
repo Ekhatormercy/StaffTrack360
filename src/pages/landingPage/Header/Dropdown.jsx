@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Signup from "../../Onboarding/Signup";
+import { useEffect, useRef, useState } from "react"
+import {Link as ScrollLink} from "react-scroll"
 const Dropdown = () => {
   const Nav = useNavigate()
   const handleloginasbusiness =()=>{
@@ -16,8 +18,15 @@ const Dropdown = () => {
       <div className="sidehold">
         <div className="Sideholdtextdiv">
           <div className="border">Home</div>
+          <ScrollLink
+              to="seclayer"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500} >  
           <div className="border" >Service</div>
-          <div  className="border">About Us</div>
+          </ScrollLink>
+          <div className="border">About Us</div>
         </div>
         <div className="BUTTONDIV">
             <button onClick={handleloginasbusiness} className="droplogin">Login as Business</button>
