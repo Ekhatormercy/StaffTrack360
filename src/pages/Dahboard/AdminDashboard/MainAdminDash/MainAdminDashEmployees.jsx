@@ -19,6 +19,7 @@ import { useEffect } from "react";
 import DashboardHeaderEMployee from "../../../../Components/DashboardHeader/DashboardHeaderEmployee";
 import ProfileEmployee from "../pages/Profile/ProfileEmployee";
 import TaskEmployee from "../task/TaskEmployee";
+import Dropdowndash from "../../../../Components/DashboardHeader/Droopdowndash";
 
 const MainAdminDashEmployee = () => {
 
@@ -47,7 +48,7 @@ const MainAdminDashEmployee = () => {
   }
   
   
-
+  const [show, setShow] = useState(false)
   const [pop, setPop] = useState(false);
   const [active, setActive] = useState("Active");
   const [performance, setPerformance] = useState(true);
@@ -200,7 +201,10 @@ const MainAdminDashEmployee = () => {
         </div>
         <div className="rightSection">
           <div className="TopRightSection">
-            <DashboardHeaderEMployee />
+            <DashboardHeaderEMployee show={show} setShow={setShow}/>
+            {
+              show === true? <Dropdowndash/>:null
+            }
           </div>
           <div className="MainDashboard">
             {performance ? (

@@ -1,37 +1,34 @@
 import React, { useState } from "react";
-import axios from "axios"; // Import axios
+import axios from "axios"; 
 
-import "./MainAdminDash.css";
+import "./Dropdowndash.css"
 import { CgProfile } from "react-icons/cg";
 import { FaUser } from "react-icons/fa";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { FcDepartment } from "react-icons/fc";
-import DashboardHeader from "../../../../Components/DashboardHeader/DashboardHeader";
-import AddEmployee from "../pages/AddEmployee/AddEmployee";
-import Performance from "../pages/Performances/Performance";
-import AddDepartment from "../pages/addDepartment/AddDepartment";
-import Profile from "../pages/Profile/Profile";
-import { useNavigate } from "react-router-dom";
-import RateEmployee from "../../HodDashboard/Pages/rateEmployee/RateEmployee";
-import Task from "../task/Task";
-import Dropdowndash from "../../../../Components/DashboardHeader/Droopdowndash";
-const MainAdminDash = () => {
-  const [show, setShow] = useState(false)
 
+import { useNavigate } from "react-router-dom";
+import AddDepartment from "../../pages/Dahboard/AdminDashboard/pages/addDepartment/AddDepartment";
+import AddEmployee from "../../pages/Dahboard/AdminDashboard/pages/AddEmployee/AddEmployee";
+import Profile from "../../pages/Dahboard/AdminDashboard/pages/Profile/Profile";
+import Task from "../../pages/Dahboard/AdminDashboard/task/Task";
+import RateEmployee from "../../pages/Dahboard/HodDashboard/Pages/rateEmployee/RateEmployee";
+
+const Dropdowndash = () => {
   const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"));
-  const userToken=userInfo.token
+  const userToken = userInfo.token;
   const nav = useNavigate();
-  // console.log(userInfo2[0]._id)
+  
 
   async function handlelogoutYes() {
     try {
       const res = await axios.post(
-        `https://staftrack360.onrender.com/api/v1/signout/${userInfo._id}`, 
+        `https://staftrack360.onrender.com/api/v1/signout/${userInfo._id}`,
         {},
         {
           headers: {
-            Authorization: `Bearer ${userInfo.token}`
-          }
+            Authorization: `Bearer ${userInfo.token}`,
+          },
         }
       );
       localStorage.clear(userInfo);
@@ -40,8 +37,6 @@ const MainAdminDash = () => {
       console.log("error from API", err);
     }
   }
-  
-  
 
   const [pop, setPop] = useState(false);
   const [active, setActive] = useState("Active");
@@ -61,32 +56,30 @@ const MainAdminDash = () => {
     setRateEmployee(false);
   };
 
-  async function changeStateDept(){
+  async function changeStateDept() {
     try {
       const res = await axios.get(
         `https://staftrack360.onrender.com/api/v1/alldepartment/${userInfo._id}`,
         {
           headers: {
-            Authorization: `Bearer ${userToken}`
-          }
+            Authorization: `Bearer ${userToken}`,
+          },
         }
       );
-      console.log(res)
-      const allStaffData=res.data.data
+      console.log(res);
+      const allStaffData = res.data.data;
       setPerformance(false);
       setDept(true);
       setEmployee(false);
       setProfile(false);
       setTask(false);
       setRateEmployee(false);
-      console.log(allStaffData)
-      localStorage.setItem('allStaffData', JSON.stringify(res.data.data))
-    } catch (err){
-      console.log("error from API", err)
+      console.log(allStaffData);
+      localStorage.setItem("allStaffData", JSON.stringify(res.data.data));
+    } catch (err) {
+      console.log("error from API", err);
     }
   }
-
-  
 
   const changeStateEmployee = () => {
     setPerformance(false);
@@ -126,58 +119,50 @@ const MainAdminDash = () => {
 
   return (
     <>
-      <div className="MainConntainer">
-        <div className="leftSection">
-          <div className="Sidebar">
+   
+          <div className="Sidebar1">
             <div className="sidebarMain">
               <div className="freeSpaceTop"></div>
               <div className="menuItems">
-                
-                  <>
-                    <div
-                      className={`item1 ${performance ? active : null} `}
-                      onClick={changeStatePerformance}
-                    >
-                      <CgProfile />
-                      Performances
-                    </div>
-                    <div
-                      className={`item1 ${dept ? active : null} `}
-                      onClick={changeStateDept}
-                    >
-                      <FcDepartment />
-                      Department
-                    </div>
-                    <div
-                      className={`item1 ${employee ? active : null} `}
-                      onClick={changeStateEmployee}
-                    >
-                      <IoPersonAddOutline />
-                      Add Employee
-                    </div>
-                    <div
-                      className={`item1 ${profile ? active : null} `}
-                      onClick={changeStateProfile}
-                    >
-                      <FaUser />
-                      Profile
-                    </div>
-                  </>
-                
+                <>
+                  <div
+                    className={`item1 ${performance ? active : null} `}
+                    onClick={changeStatePerformance}
+                  >
+                    <CgProfile />
+                    Performances
+                  </div>
+                  <div
+                    className={`item1 ${dept ? active : null} `}
+                    onClick={changeStateDept}
+                  >
+                    <FcDepartment />
+                    Department
+                  </div>
+                  <div
+                    className={`item1 ${employee ? active : null} `}
+                    onClick={changeStateEmployee}
+                  >
+                    <IoPersonAddOutline />
+                    Add Employee
+                  </div>
+                  <div
+                    className={`item1 ${profile ? active : null} `}
+                    onClick={changeStateProfile}
+                  >
+                    <FaUser />
+                    Profile
+                  </div>
+                </>
               </div>
               <div className="logout">
                 <button onClick={() => setPop(true)}>LOGOUT</button>
               </div>
             </div>
           </div>
-        </div>
+        
         <div className="rightSection">
-          <div className="TopRightSection">
-            {/* <DashboardHeader show={show} setShow={setShow}/>
-            {
-              show === true? <Dropdowndash/>:null
-            } */}
-          </div>
+          
           <div className="MainDashboard">
             {performance ? (
               <Performance />
@@ -194,7 +179,7 @@ const MainAdminDash = () => {
             ) : null}
           </div>
         </div>
-      </div>
+      
 
       {pop ? (
         <div className="popbody">
@@ -217,4 +202,4 @@ const MainAdminDash = () => {
   );
 };
 
-export default MainAdminDash;
+export default Dropdowndash;

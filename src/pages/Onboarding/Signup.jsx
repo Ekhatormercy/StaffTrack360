@@ -34,7 +34,7 @@ const Signup = () => {
   };
 
   const handlesignin = () => {
-    nav("/login");
+    nav("/");
   };
   const handlesignup = () => {
     nav("/signupsuccesspage");
@@ -146,20 +146,7 @@ const Signup = () => {
         data
       );
       console.log(res);
-      //   const adminInformation = res.data.data
-
-      //   setTimeout(() => {
-      //     nav('/loginasBusiness');
-
-      //   }, 5000);
-      //   nav('/successpage1');
-
-      //   console.log(adminInformation)
-      //   setLoading(false);
-      // } catch (err) {
-      //   console.log(err, "err message");
-      //   setLoading(false);
-      // }
+    
 
       const adminInformation = res.data.data;
 

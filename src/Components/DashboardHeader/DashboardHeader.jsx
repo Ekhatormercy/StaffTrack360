@@ -3,14 +3,23 @@ import "./DashboardHeader.css"
 import logogrn from "./images/LogoWhite.png"
 import { IoMenu } from "react-icons/io5";
 import { loginUserInfo } from '../../Redux/State';
+import { HiMenu } from "react-icons/hi";
+import { RiArrowDownSLine } from "react-icons/ri";
+import { GiCancel } from 'react-icons/gi';
+import { useState } from 'react';
 
-const DashboardHeader = () => {
+const DashboardHeader = ({show, setShow}) => {
   const userInfo= JSON.parse(localStorage.getItem("loginUserInfo"))
   
   return (
     <div className='DashboardHeader'>
       <img className='dashboardHeaderLogo' src={logogrn} alt="Logo" />
-        <div className='menu'><IoMenu color='#00756A' size={30}/></div>
+      <div className='burger1' onClick={() => setShow(!show)}>
+
+{
+    show === false ? <HiMenu />: <GiCancel/>
+}
+</div>
       <h4 className='dashboardHeaderText'>{userInfo.businessName}</h4>
       <div className='userProfile'>
         <div className='Initials'>ET</div>
