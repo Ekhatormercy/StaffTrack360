@@ -52,14 +52,30 @@ const MainAdminDash = () => {
   const [task, setTask] = useState(false);
   const [rateEmployee, setRateEmployee] = useState(false);
 
-  const changeStatePerformance = () => {
-    setPerformance(true);
+  async function changeStatePerformance(){
+    
+      try {
+        const res = await axios.get(
+          `https:// https://staftrack360.onrender.com/api/v1/viewall/${userInfo._id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${userToken}`
+            }
+          }
+        );
+        console.log(res)
+        setPerformance(true);
     setDept(false);
     setEmployee(false);
     setProfile(false);
     setTask(false);
     setRateEmployee(false);
-  };
+    } catch (err){
+      console.log("error from API", err);
+      
+    }
+  }
+ 
 
   async function changeStateDept(){
     try {
