@@ -1,15 +1,23 @@
 import React, { useState } from 'react'
 import "./AddDepartment.css"
 import axios from 'axios'
+import { css } from '@emotion/react';
+import { HashLoader } from 'react-spinners';
+
+
 
 const AddDepartment = () => {
   const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"))
   const allStaffDataMain = JSON.parse(localStorage.getItem("allStaffData"))
 
-
-  const [departmentName, setDepartmentName]=useState()
+  const [loading, setLoading] = useState(false)
+const [departmentName, setDepartmentName]=useState()
   const [departmentHead, setDepartmentHead]=useState()
   const [addDeptBtn, setAddDeptBtn] = useState(false)
+
+  
+
+  
 
   console.log(allStaffDataMain[0].department)
 
@@ -20,6 +28,7 @@ const AddDepartment = () => {
     departmentHead:departmentHead
   }
 const handleAddDeptAdd =()=>{
+  
   setAddDeptBtn(true)
 }
   async function handleAddDepartment(){
@@ -33,9 +42,11 @@ const handleAddDeptAdd =()=>{
         }
       );
       console.log(res)
+      setLoading(false);
       setAddDeptBtn(false)
     } catch (err){
       console.log("error from API", err)
+      setLoading(false);
     }
   }
   
@@ -50,7 +61,34 @@ const handleAddDeptAdd =()=>{
         <div className='addDptSec1'>
           <input type="text" placeholder='NAME OF DEPARTMENT' onChange={(e)=>setDepartmentName(e.target.value)}/>
           <input type="text"  placeholder='DEPARTMENT HEAD' onChange={(e)=>setDepartmentHead(e.target.value)}/>
-          <button onClick={handleAddDepartment}>ADD DEPARTMENT</button>
+          {/* <button onClick={handleAddDepartment}>ADD DEPARTMENT</button> */}
+          <button
+  onClick={handleAddDepartment}
+  disabled={loading}
+  style={{
+    position: 'relative',
+    overflow: 'hidden',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  {addDeptBtn && (
+    <HashLoader
+      css={css`
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      `}
+      color="#ffffff"
+      loading={loading}
+      size={30}
+    />
+  )}
+  {addDeptBtn ? 'ADD DEPARTMENT' : null}
+</button>
+
         </div>
         </>
     </div>
