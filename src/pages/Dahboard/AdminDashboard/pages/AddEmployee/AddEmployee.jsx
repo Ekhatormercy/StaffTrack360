@@ -8,6 +8,9 @@ import { HashLoader } from 'react-spinners';
 
 
 const AddEmployee = () => {
+  const [isError, setIsError] = useState({
+    state:false, message: "", 
+  })
 const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"))
 const [userInfo2, setUserInfo2] = useState()
 const [loading, setLoading] = useState(false);
@@ -26,7 +29,7 @@ const AddEmployeeInput = {
 const Nav=useNavigate()
 console.log(AddEmployeeInput)
 // console.log(userInfo._id)
-async function handleAddEmployee() {
+ const handleAddEmployee = async () => {
   try {
 
     const res = await axios.post(
@@ -40,12 +43,13 @@ async function handleAddEmployee() {
       
     console.log(res.data);
     setUserInfo2(res.data);
-    
+    setLoading(false);
     console.log(userInfo2); 
     localStorage.setItem('loginUserInfo2', JSON.stringify(userInfo2));
   } catch (err) {
     
     console.error("Error from API", err);
+    setIsError({state: true, message: err.response.data.message})
     setLoading(false);
     
   }
@@ -63,19 +67,12 @@ async function handleAddEmployee() {
           <input type="email" placeholder='Email' onChange={(e)=>setEmail(e.target.value)}/>
           <input type="text" placeholder='Department' onChange={(e)=>setDepartment(e.target.value)}/>
           <input type="text" placeholder='Role' onChange={(e)=>setRole(e.target.value)}/>
-          {/* <button
-           onClick={handleAddEmployee}
-
-          >
-           {
-                   
-            loading ? <SpinnerDotted size={30} color='white' /> : "ADD EMPLOYEE"
-           }  
-           </button> */}
+              {
+                isError.state? <p className='isError'>{isError.message}</p>:null
+              } 
 
 <button
         onClick={handleAddEmployee}
-        //  className="signuppbtn"
         disabled={loading}
         style={{ position: 'relative',
         overflow: 'hidden',
@@ -96,7 +93,7 @@ async function handleAddEmployee() {
             size={30}
           />
         )}
-        {loading ? "siginup.." : 'ADD EMPLOYEE'}
+        {loading ? null : 'ADD EMPLOYEE'}
       </button>
       </div>
     </div>
