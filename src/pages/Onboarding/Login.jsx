@@ -15,6 +15,8 @@ import Loading from "../../Components/Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUserInfo } from "../../Redux/State";
 import { useState } from "react";
+import { css } from '@emotion/react';
+import { HashLoader } from 'react-spinners';
 
 
 
@@ -142,12 +144,36 @@ const LoginasBusiness = () => {
             
               <p className="err1">{errors.password?.message}</p>
             
-              <button className="LOGINBTN"  
+              {/* <button className="LOGINBTN"  
               >
              {
                 loading ? <SpinnerDotted size={30} color='white'/> :  "LOGIN"
              }
-             </button>
+             </button> */}
+             <button
+         className= "LOGINBTN"
+        disabled={loading}
+        style={{ position: 'relative',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center' }}
+      >
+        {loading && (
+          <HashLoader
+            css={css`
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            `}
+            color="#ffffff"
+            loading={loading}
+            size={30}
+          />
+        )}
+        {loading ? null : 'LOGIN'}
+      </button>
 
              
               <div className="signherediv">
