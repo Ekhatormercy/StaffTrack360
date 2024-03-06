@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import {Link as ScrollLink} from "react-scroll"
 // import { FcMenu } from 'react-icons/fc';
 import { HiMenu } from "react-icons/hi";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { GiCancel } from 'react-icons/gi';
 import { useNavigate } from "react-router-dom";
 import "./Header.css"
+
 const Header =({show, setShow})=>{
     const [isScrolled, setIsScrolled] =useState(false);
     
@@ -23,7 +25,7 @@ const Header =({show, setShow})=>{
         Nav("/loginasEmployee")
     }
     const handletrial =()=>{
-        Nav("/trialpage")
+        Nav("/signup")
     }
     const handleabout = ()=> {
        Nav("/aboutpage")
@@ -53,14 +55,27 @@ const Header =({show, setShow})=>{
                 </div>
                 <div className={`Navdiv ${isScrolled ? 'text-scrolled' : ''}`}>
                     <p style={{color: "orange"}}>Home</p>
-                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`} >Service</p>
-                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`} onClick={handleabout}>About Us</p>
+
+                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`} ></p>
+                    <ScrollLink
+              to="seclayer"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+               <p>Services</p>
+            </ScrollLink>
+                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>About Us</p>
+                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Payment</p>
+>
     
                  
                 </div>
                 <div className="Upbuttndiv">
                 <button className={`loginbtn ${isScrolled ? 'login-scrolled' : ''}`} onMouseOver={showdrop}>Login <RiArrowDownSLine /></button>
-               <button className={`Trialbtn ${isScrolled ? 'signup-scrolled' : ''}`}>Sign Up</button>
+<
+               <button onClick={handletrial} className={`Trialbtn ${isScrolled ? 'signup-scrolled' : ''}`}>Sign Up</button>
                   
                 </div>
                 <div className='burger' onClick={() => setShow(!show)}>
@@ -78,6 +93,7 @@ const Header =({show, setShow})=>{
         </div>:null
          }
             </div>
+
         </div>
     )
 }

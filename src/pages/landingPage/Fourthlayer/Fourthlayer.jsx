@@ -1,7 +1,12 @@
 import letsgrow from "../../../assets/letsgrow.webp"
 import { IoIosArrowForward } from "react-icons/io";
 import "./Fourthlayer.css";
+import { useNavigate } from "react-router";
+
+
 const Fourthlayer = () => {
+  const handletrialpage =()=>{
+    Nav("/signup")}
   return (
     <div className="LetsGrow2geda">
       <div className="letsgrowwrap">
@@ -13,7 +18,7 @@ const Fourthlayer = () => {
           Manage Your Employees Performance and Give feedback to enhance Your
           company Productivity.
         </p>
-        <button className="newtrialbtn1">Start Free Trial <IoIosArrowForward /></button>
+        <button className="newtrialbtn1" onClick={handletrialpage}>Start Free Trial <IoIosArrowForward /></button>
         
         <div className="letsgrowimg">
             <img src={letsgrow} alt="" />

@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import Signup from "../../Onboarding/Signup";
 const Dropdown = () => {
   const Nav = useNavigate()
   const handlelogin =()=>{
     Nav("/login")
+}
+  const handletrialpage =()=>{
+    Nav("/trialpage")
 }
   return (
     <div className="Dropdown">
@@ -14,7 +18,7 @@ const Dropdown = () => {
         </div>
         <div className="BUTTONDIV">
             <button onClick={handlelogin} className="droplogin">Login</button>
-            <button className="dropsign">Sign Up</button>
+            <button onClick={Signup}  className="dropsign">Sign Up</button>
         </div>
       </div>
     </div>

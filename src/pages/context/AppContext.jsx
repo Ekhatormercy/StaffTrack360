@@ -13,8 +13,9 @@ const [adminData, setAdminData]= useState({
     phoneNumber:'',
 
 })
+const [userInfo, setUserInfo]=useState('')
 return(
-    <MyContext.Provider value={{adminData, setAdminData, AppContext}}>
+    <MyContext.Provider value={{adminData, setAdminData,setUserInfo, userInfo, AppContext}}>
         {children}
     </MyContext.Provider>
 )

@@ -15,26 +15,31 @@ import { useNavigate } from "react-router-dom";
 // import { Route, Routes } from "react-router-dom";
 import RateEmployee from "../../HodDashboard/Pages/rateEmployee/RateEmployee";
 import Task from "../task/Task";
-// import { useEffect } from "react";
-const MainAdminDash = () => {
+import { useEffect } from "react";
+import DashboardHeaderEMployee from "../../../../Components/DashboardHeader/DashboardHeaderEmployee";
+import ProfileEmployee from "../pages/Profile/ProfileEmployee";
+import TaskEmployee from "../task/TaskEmployee";
+
+const MainAdminDashEmployee = () => {
 
   const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"));
-  const userToken=userInfo.token
+  const userInfo2 = JSON.parse(localStorage.getItem("loginUserInfo2"));
   const nav = useNavigate();
-  // console.log(userInfo2[0]._id)
-
+  const userID=(userInfo2._id)
+  const userToken=(userInfo2.token)
+  console.log(userToken)
   async function handlelogoutYes() {
     try {
       const res = await axios.post(
-        `https://staftrack360.onrender.com/api/v1/signout/${userInfo._id}`, 
+        ` https://staftrack360.onrender.com/api/v1/logOut/${userID}`, 
         {},
         {
           headers: {
-            Authorization: `Bearer ${userInfo.token}`
+            Authorization: `Bearer ${userToken}`
           }
         }
       );
-      localStorage.clear(userInfo);
+      localStorage.clear(userInfo2);
       nav("/");
     } catch (err) {
       console.log("error from API", err);
@@ -50,6 +55,7 @@ const MainAdminDash = () => {
   const [employee, setEmployee] = useState(false);
   const [profile, setProfile] = useState(false);
   const [task, setTask] = useState(false);
+  const [taskEmployee, setTaskEmployee] = useState(false);
   const [rateEmployee, setRateEmployee] = useState(false);
 
   const changeStatePerformance = () => {
@@ -59,34 +65,18 @@ const MainAdminDash = () => {
     setProfile(false);
     setTask(false);
     setRateEmployee(false);
+    setTaskEmployee(false)
   };
 
-  async function changeStateDept(){
-    try {
-      const res = await axios.get(
-        `https://staftrack360.onrender.com/api/v1/alldepartment/${userInfo._id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${userToken}`
-          }
-        }
-      );
-      console.log(res)
-      const allStaffData=res.data.data
-      setPerformance(false);
-      setDept(true);
-      setEmployee(false);
-      setProfile(false);
-      setTask(false);
-      setRateEmployee(false);
-      console.log(allStaffData)
-      localStorage.setItem('allStaffData', JSON.stringify(res.data.data))
-    } catch (err){
-      console.log("error from API", err)
-    }
-  }
-
-  
+  const changeStateDept = () => {
+    setPerformance(false);
+    setDept(true);
+    setEmployee(false);
+    setProfile(false);
+    setTask(false);
+    setRateEmployee(false);
+    setTaskEmployee(false)
+  };
 
   const changeStateEmployee = () => {
     setPerformance(false);
@@ -95,6 +85,7 @@ const MainAdminDash = () => {
     setProfile(false);
     setTask(false);
     setRateEmployee(false);
+    setTaskEmployee(false)
   };
 
   const changeStateProfile = () => {
@@ -104,24 +95,36 @@ const MainAdminDash = () => {
     setProfile(true);
     setTask(false);
     setRateEmployee(false);
+    setTaskEmployee(false)
   };
 
   const changeStateTask = () => {
     setPerformance(false);
     setDept(false);
     setEmployee(false);
-    setProfile(true);
+    setProfile(false);
     setTask(true);
     setRateEmployee(false);
+    setTaskEmployee(false)
   };
 
   const changeStateRateEmployee = () => {
     setPerformance(false);
     setDept(false);
     setEmployee(false);
-    setProfile(true);
+    setProfile(false);
     setTask(false);
     setRateEmployee(true);
+    setTaskEmployee(false)
+  };
+  const changeStateTaskEmployee = () => {
+    setPerformance(false);
+    setDept(false);
+    setEmployee(false);
+    setProfile(false);
+    setTask(false);
+    setRateEmployee(false);
+    setTaskEmployee(true)
   };
 
   return (
@@ -132,7 +135,7 @@ const MainAdminDash = () => {
             <div className="sidebarMain">
               <div className="freeSpaceTop"></div>
               <div className="menuItems">
-                
+                {userInfo2.role === "hod" ? (
                   <>
                     <div
                       className={`item1 ${performance ? active : null} `}
@@ -142,18 +145,35 @@ const MainAdminDash = () => {
                       Performances
                     </div>
                     <div
-                      className={`item1 ${dept ? active : null} `}
-                      onClick={changeStateDept}
+                      className={`item1 ${profile ? active : null} `}
+                      onClick={changeStateProfile}
                     >
-                      <FcDepartment />
-                      Department
+                      <FaUser />
+                      Profile
                     </div>
                     <div
-                      className={`item1 ${employee ? active : null} `}
-                      onClick={changeStateEmployee}
+                      className={`item1 ${task ? active : null} `}
+                      onClick={changeStateTask}
                     >
-                      <IoPersonAddOutline />
-                      Add Employee
+                      <FaUser />
+                      Task
+                    </div>
+                    <div
+                      className={`item1 ${rateEmployee ? active : null} `}
+                      onClick={changeStateRateEmployee}
+                    >
+                      <FaUser />
+                      Rate Employee
+                    </div>
+                  </>
+                ) : userInfo2.role === "employee" ? (
+                  <>
+                    <div
+                      className={`item1 ${performance ? active : null} `}
+                      onClick={changeStatePerformance}
+                    >
+                      <CgProfile />
+                      Performances
                     </div>
                     <div
                       className={`item1 ${profile ? active : null} `}
@@ -162,8 +182,15 @@ const MainAdminDash = () => {
                       <FaUser />
                       Profile
                     </div>
+                    <div
+                      className={`item1 ${taskEmployee ? active : null} `}
+                      onClick={changeStateTaskEmployee}
+                    >
+                      <FaUser />
+                      Task
+                    </div>
                   </>
-                
+                ) : null}
               </div>
               <div className="logout">
                 <button onClick={() => setPop(true)}>LOGOUT</button>
@@ -173,7 +200,7 @@ const MainAdminDash = () => {
         </div>
         <div className="rightSection">
           <div className="TopRightSection">
-            <DashboardHeader />
+            <DashboardHeaderEMployee />
           </div>
           <div className="MainDashboard">
             {performance ? (
@@ -183,12 +210,14 @@ const MainAdminDash = () => {
             ) : employee ? (
               <AddEmployee />
             ) : profile ? (
-              <Profile />
+              <ProfileEmployee />
             ) : task ? (
               <Task />
             ) : rateEmployee ? (
               <RateEmployee />
-            ) : null}
+            )  : taskEmployee ? (
+              <TaskEmployee />
+            ): null}
           </div>
         </div>
       </div>
@@ -214,4 +243,4 @@ const MainAdminDash = () => {
   );
 };
 
-export default MainAdminDash;
+export default MainAdminDashEmployee;

@@ -2,8 +2,8 @@ import React from 'react'
 import "./Profile.css"
 import { FaCircleUser } from "react-icons/fa6";
 
-const Profile = () => {
-  const userInfo= JSON.parse(localStorage.getItem("loginUserInfo"))
+const ProfileEmployee = () => {
+  const userInfo2= JSON.parse(localStorage.getItem("loginUserInfo2"))
   return (
     <div className='Profile'>
       <div className='ProfilePics'>
@@ -13,27 +13,27 @@ const Profile = () => {
       <div className='ProfileDetails'>
         <div className='ProfileDetails1'>
           <p>Name</p>
-          <p>{userInfo.firstName} {userInfo.lastName}</p>
+          <p>{userInfo2.fullName}</p>
         </div>
         <div className='ProfileDetails1'>
         <p>Email</p>
-          <p>{userInfo.businessEmail}</p>
+          <p>{userInfo2.email}</p>
         </div>
         <div className='ProfileDetails1'>
         <p>Phone</p>
-          <p>{userInfo.phoneNumber}</p>
+          <p>{userInfo2.phoneNumber}</p>
         </div>
         <div className='ProfileDetails1'>
         <p>Department</p>
-          <p>{userInfo.department}</p>
+          <p>{userInfo2.department}</p>
         </div>
         <div className='ProfileDetails1'>
         <p>Role</p>
-          <p>{userInfo.role}</p>
+          <p>{userInfo2.role}</p>
         </div>
       </div>
     </div>
   )
 }
 
-export default Profile
+export default ProfileEmployee
