@@ -215,11 +215,32 @@ backdrop-filter: blur(10px);
 .border{
    width: 100%;
    height: 18%;
-   background-color: green;
-   /* border-bottom: 1px solid lightgray; */
+   /* background-color: green; */
+   border-bottom: 1px solid lightgray;
    display: flex;
+   justify-content: center;
    align-items: center;
 }
+.border:hover{
+   color: orange;
+}
+.border1{
+   width: 100%;
+   height: 18%;
+   /* background-color: green; */
+   border-bottom: 1px solid lightgray;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.border1 border11{
+    width: 100%;
+   height: 100%;
+}
+.border11:hover{
+   color: orange;
+}
+
 .BUTTONDIV{
     width: 100%;
     height: 40%;
@@ -231,12 +252,12 @@ backdrop-filter: blur(10px);
     
 }
 .droplogin{
-    width: 90%;
+    width: 70%;
     height: 25%;
     font-size: 15px;
     font-family: "raleway";
-    border: 2px solid   rgb(0, 117, 106) ;
-    /* background-color: transparent; */
+    border: 1px solid   rgb(0, 117, 106) ;
+    border-radius: 2px;
     color: rgb(0, 117, 106);
     font-weight: 700;
     transition: color 0.3s ease;
@@ -249,7 +270,7 @@ backdrop-filter: blur(10px);
 }
 .dropsign{
     cursor: pointer;
-    width: 90%;
+    width: 70%;
     color:  white;
    border-radius: 8px;
    border: none;

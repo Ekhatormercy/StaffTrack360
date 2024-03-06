@@ -1,7 +1,6 @@
 import "./Seclayer.css"
 import { OurServicesData } from "../../../Components/Data"
 
-import rateimg from "../../../assets/rateimg.png"
 
 const Secondlayer = ()=>{
     

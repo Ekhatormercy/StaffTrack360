@@ -19,12 +19,13 @@ const Dropdown = () => {
         <div className="Sideholdtextdiv">
           <div className="border">Home</div>
           <ScrollLink
+             className="border1"
               to="seclayer"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500} >  
-          <div className="border" >Service</div>
+          <div className="border11">Service</div>
           </ScrollLink>
           <div className="border">About Us</div>
         </div>
