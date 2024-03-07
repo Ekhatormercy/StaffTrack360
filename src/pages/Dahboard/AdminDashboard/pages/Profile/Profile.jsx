@@ -25,7 +25,7 @@ const Profile = () => {
         </div>
         <div className='ProfileDetails1'>
         <p>Department</p>
-          <p>{userInfo.department}</p>
+          <p>{userInfo.businessName}</p>
         </div>
         <div className='ProfileDetails1'>
         <p>Role</p>
