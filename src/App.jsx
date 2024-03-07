@@ -21,9 +21,7 @@ import PrivatePage from "./pages/context/Private"
 import PrivateRoute from "./pages/context/Private"
 import PrivatePageEmployee from "./pages/context/PrivateEmployee"
 import MainAdminDashEmployee from "./pages/Dahboard/AdminDashboard/MainAdminDash/MainAdminDashEmployees"
-// import Dropdown2 from "./Components/DashboardHeader/Dropdown2"
-import Dropdowndash from "./Components/DashboardHeader/Droopdowndash"
-
+import Aboutus from "./pages/AboutUs/Aboutus"
 function App() {
 
 
@@ -48,6 +46,7 @@ function App() {
           <Route path='/successpage1' element={<Signupsuccessful />} />
           <Route path='/decisionpage' element={<Choose />} />
           <Route path="/changepassword" element = {<PasswordChange/>}/>
+          <Route path="/Aboutus" element = {<Aboutus/>}/>
           {/* <Route path='/dashboard/' element={<MainAdminDash />} /> */}
           
           {/* <Route path="/dropdown" element={<Dropdowndash/>}/> */}

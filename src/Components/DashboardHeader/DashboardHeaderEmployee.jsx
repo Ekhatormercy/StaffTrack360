@@ -3,9 +3,9 @@ import "./DashboardHeader.css"
 import logogrn from "./images/LogoWhite.png"
 import { IoMenu } from "react-icons/io5";
 import { loginUserInfo } from '../../Redux/State';
-import { HiMenu } from "react-icons/hi";
+// import { HiMenu } from "react-icons/hi";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { GiCancel } from 'react-icons/gi';
+// import { GiCancel } from 'react-icons/gi';
 
 const DashboardHeaderEMployee = ({show, setShow}) => {
   const userInfo2= JSON.parse(localStorage.getItem("loginUserInfo2"))
@@ -13,12 +13,7 @@ const DashboardHeaderEMployee = ({show, setShow}) => {
   return (
     <div className='DashboardHeader'>
       <img className='dashboardHeaderLogo' src={logogrn} alt="Logo" />
-      <div style={{color: "green"}} className='burger1' onClick={() => setShow(!show)}>
 
-{
-    show === false ? <HiMenu />: <GiCancel/>
-}
-</div>
        
       <h4 className='dashboardHeaderText'>Welcome...</h4>
       <div className='userProfile'>

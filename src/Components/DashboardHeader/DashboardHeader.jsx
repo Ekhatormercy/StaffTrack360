@@ -3,30 +3,23 @@ import "./DashboardHeader.css"
 import logogrn from "./images/LogoWhite.png"
 import { IoMenu } from "react-icons/io5";
 import { loginUserInfo } from '../../Redux/State';
-import { HiMenu } from "react-icons/hi";
+// import { HiMenu } from "react-icons/hi";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { GiCancel } from 'react-icons/gi';
+// import { GiCancel } from 'react-icons/gi';
 import { useState } from 'react';
 import Dropdowndash from './Droopdowndash';
 
-const DashboardHeader = () => {
-  const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"))
-  const [show, setShow] = useState(false)
 
+
+const DashboardHeader = () => {
+  const userInfo= JSON.parse(localStorage.getItem("loginUserInfo"))
+  
   return (
     <>
 
     <div className='DashboardHeader'>
-      {/* { show ?  
-  <div className='dropDown'></div>  */}
-
-     <img className='dashboardHeaderLogo' src={logogrn} alt="Logo" />
-      <div className='burger1' onClick={() => setShow(!show)}>
-
-        {
-          show ? <GiCancel /> : <HiMenu />
-        }
-      </div>
+      <img className='dashboardHeaderLogo' src={logogrn} alt="Logo" />
+ 
       <h4 className='dashboardHeaderText'>{userInfo.businessName}</h4>
       <div className='userProfile'>
         <div className='Initials'>ET</div>

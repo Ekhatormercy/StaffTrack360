@@ -16,7 +16,7 @@ import RateEmployee from "../../HodDashboard/Pages/rateEmployee/RateEmployee";
 import Task from "../task/Task";
 // import Dropdowndash from "../../../../Components/DashboardHeader/Droopdowndash";
 const MainAdminDash = () => {
-  const [show, setShow] = useState(false)
+  // const [show, setShow] = useState(false)
 
   const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"));
   console.log(userInfo._id)
@@ -198,11 +198,8 @@ const MainAdminDash = () => {
 
         <div className="rightSection">
           <div className="TopRightSection">
-            <DashboardHeader show={show} setShow={setShow}/>
-            {/* {
-              show === true? <Dropdowndash/>:null
-            }  */}
-            {/* <DashboardHeader /> */}
+           
+            <DashboardHeader/>
           </div>
           <div className="MainDashboard">
             {performance ? (

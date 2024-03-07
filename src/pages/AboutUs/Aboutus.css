@@ -1,0 +1,388 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.aboutcontainer{
+    width: 100%;
+    height: 80vh;
+    /* background-color: blue; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+.aboutwrapper{
+    width: 100%;
+    height: 100%;
+    /* background-color: green; */
+      display: flex;
+    /* flex-direction: column;   */
+}
+
+.aboutleftpart{
+    width:50%;
+    height:100%;
+    /* background-color: brown; */
+
+}
+
+.aboutleftpartwrapper{
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* gap: 50px; */
+}
+
+.lefttext{
+    width: 80%;
+    height: 30%;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.lefttext h1{
+  font-family: raleway, poppins;
+  font-size: 35px;
+  font-weight:900;
+  color: rgb(5, 120, 109);
+}
+
+
+.lefttext p{
+ font-family: raleway, Poppins;
+ font-size: 20px;
+ font-weight:500;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
+}
+
+.aboutright{
+    width: 50%;
+    height: 100%;
+    /* background-color: black; */
+    display: flex;
+}
+.aboutrightwrapper{
+    width: 100%;
+    height: 100%;
+    /* background-color: purple; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutlogo{
+    width: 100%;
+    height: 85%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutlogo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.aboutmiddlepartcontainer{
+    width:100%;
+    height:70%;
+    background: linear-gradient(to bottom left, rgb(204, 197, 197),rgb(5, 120, 109), #52bcd6);;
+    /* background-color: red; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.aboutmiddlepart{
+    width: 90%;
+    height:100%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.aboutmiddlefirsttext{
+  width: 100%;
+  height: 30%;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aboutmiddlefirsttext h1{
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    font-family: raleway;
+    color: rgb(5, 120, 109);
+}
+
+.aboutmiddlesecondtext{
+    width: 100%;
+    height: 40%;
+    /* background-color: red; */
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    padding-left: 20px;
+}
+.aboutmiddlesecondtext h3{
+font-family: raleway;
+   font-size:18px ;
+ 
+}
+.aboutmiddlepartcard{
+    width: 50%;
+    height: 60%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+    border-radius: 10px;
+}
+
+
+
+.aboutmiddlepart1{
+    width: 50%;
+    height:100%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutmiddlepartcard{
+    width: 60%;
+    height: 70%;
+    background-color: white;
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+     border-radius: 10px;
+}
+
+
+.aboutmiddleparttext2 {
+    width: 100%;
+    height: 60%;
+    /* background-color: aqua; */
+    padding-left: 20px;
+}
+.aboutmiddleparttext2 h3{
+    font-family: raleway;
+    font-size:18px ;
+}
+
+
+.ourteamdiv{
+    width: 100%;
+    height: 90%;
+    /* background-color: rgb(245,242,242); */
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    
+}
+.meetourteam{
+    width: 100%;
+    height: 30%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    color: rgb(36, 33, 33);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.meetourteamimage{
+    width: 100%;
+    height: 60%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: raleway;
+
+}
+.toweh {
+    width: 15%;
+    height: 70%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 5px;
+}
+.toweh img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+}
+.chibuike{
+    width: 15%;
+    height: 70%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+.chibuike img{
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
+}
+.mercy{
+    width: 15%;
+    height: 70%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 5px;
+    
+}
+.mercy img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+
+}
+.collins{
+    width: 15%;
+    height: 70%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 5px;
+}
+.collins img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+
+}
+.favour{
+    width: 15%;
+    height:70%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 5px;
+}
+.favour img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+}
+.meetourteam p{
+    font-size: 20px;
+}
+.meetourteam h2{
+    font-size: 20px;
+}
+/* Add this at the end of your existing CSS */
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .aboutwrapper {
+      flex-direction: column-reverse;
+    }
+  
+    .aboutleftpart,
+    .aboutright {
+      width: 100%;
+    }
+  
+    .aboutmiddlepart,
+    .aboutmiddlepart1 {
+      width: 100%;
+    }
+  
+    .aboutmiddlepartcard,
+    .aboutmiddleparttext2,
+    .aboutmiddlefirsttext {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  
+  /* Media query for screens smaller than 480px */
+  @media (max-width: 480px) {
+    .lefttext h1 {
+      font-size: 28px;
+    }
+  
+    .lefttext p,
+    .aboutmiddlefirsttext h1,
+    .aboutmiddlesecondtext h3,
+    .aboutmiddleparttext2 h3,
+    .meetourteam p,
+    .meetourteam h2 {
+      font-size: 16px;
+    }
+    @media (max-width: 768px) {
+        /* Media query for screens smaller than 768px (Tablet) */
+        .meetourteam {
+          gap: 10px;
+        }
+      
+        .meetourteamimage {
+          height: auto;
+          flex-direction: column;
+          align-items: center; /* Optional: Center items horizontally */
+        }
+      
+        .toweh,
+        .chibuike,
+        .mercy,
+        .collins,
+        .favour {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        /* Media query for screens smaller than 480px (Phone) */
+        .meetourteam p,
+        .meetourteam h2 {
+          font-size: 16px;
+        }
+      
+      
+      }
+      
+  }
+  
