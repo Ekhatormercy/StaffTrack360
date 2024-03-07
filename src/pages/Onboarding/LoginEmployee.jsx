@@ -14,21 +14,24 @@ import Loading from "../../Components/Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUserInfo } from "../../Redux/State";
 import { useState } from "react";
-import { SpinnerCircular, SpinnerDotted } from "spinners-react";
+import { css } from '@emotion/react';
+import { HashLoader } from 'react-spinners';
 
 
 
 const loginasEmployee = () => {
   // const { userInfo, setUserInfo } = useContext(MyContext)
-  const [isError, setIsError] = useState('')
+  const [isError, setIsError] = useState({
+    state:false, message: "", 
+  })
   const [showPassword, setShowPassword] =useState(false)
   const Nav = useNavigate()
   const [loading, setLoading] = useState(false)
   const handlemail = () => {
     Nav("/businessmail")
   }
-  const handletrial = () => {
-    Nav("/trialpage")
+  const handlesignup = () => {
+    Nav("/signup")
   }
 
   const handleShowPassword = () => {
@@ -70,9 +73,11 @@ const loginasEmployee = () => {
       Nav("/dashboardEmployee");
     } catch (err) {
       console.log("Error from api", err);
+      setIsError({state: true, message: err.response.data.message})
       setLoading(false);
+     
 
-      setIsError(err.message ? err.messge : err.response?.data?.message)
+     
       setTimeout(() => {
         setIsError('')
       }, 10000);
@@ -117,19 +122,45 @@ const loginasEmployee = () => {
               
 
               <p className="err1">{errors.password?.message}</p>
+              {
+                isError.state?alert(isError.message):null
+              }
                 
-            
+{/*             
              <button className="LOGINBTN"  
               >
              {
                 loading ? <SpinnerDotted size={30} color='white'/> :  "LOGIN"
              }
-             </button>
-
+             </button> */}
+   <button
+         className= "LOGINBTN"
+        disabled={loading}
+        style={{ position: 'relative',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center' }}
+      >
+        {loading && (
+          <HashLoader
+            css={css`
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            `}
+            color="#ffffff"
+            loading={loading}
+            size={30}
+          />
+        )}
+        {loading ? null : 'LOGIN'}
+      </button>
                             
               
                   <div className="signherediv">
-            <p>Don't have an Account? <span onClick={handletrial}>Signup</span></p>
+            <p>Don't have an Account? <span onClick={handlesignup}>Signup</span></p>
           </div>
      </div>
          

@@ -17,7 +17,9 @@ import { HashLoader } from 'react-spinners';
 
 
 const Signup = () => {
-
+  const [isError, setIsError] = useState({
+    state:false, message: "", 
+  })
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [password1, setPassword] = useState("");
@@ -34,7 +36,7 @@ const Signup = () => {
   };
 
   const handlesignin = () => {
-    nav("/login");
+    nav("/");
   };
   const handlesignup = () => {
     nav("/signupsuccesspage");
@@ -146,20 +148,7 @@ const Signup = () => {
         data
       );
       console.log(res);
-      //   const adminInformation = res.data.data
-
-      //   setTimeout(() => {
-      //     nav('/loginasBusiness');
-
-      //   }, 5000);
-      //   nav('/successpage1');
-
-      //   console.log(adminInformation)
-      //   setLoading(false);
-      // } catch (err) {
-      //   console.log(err, "err message");
-      //   setLoading(false);
-      // }
+    
 
       const adminInformation = res.data.data;
 
@@ -172,6 +161,10 @@ const Signup = () => {
       nav("/successpage1");
       setLoading(false);
     } catch (err) {
+      console.log("Error from api", err);
+      setIsError({state: true, message: err.response.data.message})
+  setLoading(false);
+
       setLoading(false);
       toast.error("Signup failed. Email already exists.");
       console.log(err, "err message");
@@ -235,7 +228,9 @@ const Signup = () => {
                   </div>
                   <>
                   <p className="err">{errors.password?.message}</p>
-
+                  {
+                isError.state? <p className='isError'>{isError.message}</p>:null
+              } 
                 
 <button
          className="signuppbtn"
