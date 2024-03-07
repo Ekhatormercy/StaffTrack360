@@ -7,28 +7,45 @@ import { HiMenu } from "react-icons/hi";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { GiCancel } from 'react-icons/gi';
 import { useState } from 'react';
+import Dropdowndash from './Droopdowndash';
 
-const DashboardHeader = ({show, setShow}) => {
-  const userInfo= JSON.parse(localStorage.getItem("loginUserInfo"))
-  
+const DashboardHeader = () => {
+  const userInfo = JSON.parse(localStorage.getItem("loginUserInfo"))
+  const [show, setShow] = useState(false)
+
   return (
+    <>
+
     <div className='DashboardHeader'>
-      <img className='dashboardHeaderLogo' src={logogrn} alt="Logo" />
+      {/* { show ?  
+  <div className='dropDown'></div>  */}
+
+     <img className='dashboardHeaderLogo' src={logogrn} alt="Logo" />
       <div className='burger1' onClick={() => setShow(!show)}>
 
-{
-    show === false ? <HiMenu />: <GiCancel/>
-}
-</div>
+        {
+          show ? <GiCancel /> : <HiMenu />
+        }
+      </div>
       <h4 className='dashboardHeaderText'>{userInfo.businessName}</h4>
       <div className='userProfile'>
         <div className='Initials'>ET</div>
         <div className='ProfileDetail'>
-             <h5>{`${userInfo.firstName} ${userInfo.lastName}`} </h5>
-             <h6>{userInfo.role}</h6>
+          <h5>{`${userInfo.firstName} ${userInfo.lastName}`} </h5>
+          <h6>{userInfo.role}</h6>
         </div>
       </div>
+{
+  show && <div className='dropDown'>
+    
+     <Dropdowndash/>
+
+  </div> 
+}
     </div>
+   
+ 
+    </>
   )
 }
 

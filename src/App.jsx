@@ -21,6 +21,9 @@ import PrivatePage from "./pages/context/Private"
 import PrivateRoute from "./pages/context/Private"
 import PrivatePageEmployee from "./pages/context/PrivateEmployee"
 import MainAdminDashEmployee from "./pages/Dahboard/AdminDashboard/MainAdminDash/MainAdminDashEmployees"
+// import Dropdown2 from "./Components/DashboardHeader/Dropdown2"
+import Dropdowndash from "./Components/DashboardHeader/Droopdowndash"
+
 function App() {
 
 
@@ -46,6 +49,8 @@ function App() {
           <Route path='/decisionpage' element={<Choose />} />
           <Route path="/changepassword" element = {<PasswordChange/>}/>
           {/* <Route path='/dashboard/' element={<MainAdminDash />} /> */}
+          
+          {/* <Route path="/dropdown" element={<Dropdowndash/>}/> */}
           <Route element={<PrivatePage />}>
             <Route path='/dashboard/*' element={<MainAdminDash />} />
           </Route>

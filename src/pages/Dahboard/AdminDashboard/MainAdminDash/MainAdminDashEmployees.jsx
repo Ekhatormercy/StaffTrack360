@@ -32,9 +32,10 @@ const MainAdminDashEmployee = () => {
   const userToken=(userInfo2.token)
   const departmentId=(userInfo2.departmentId)
   console.log(userToken)
+console.log(userID)
 
 
-  async function handlelogoutYes() {
+  async function handlelogoutYes2() {
     try {
       const res = await axios.post(
         ` https://staftrack360.onrender.com/api/v1/logOut/${userID}`, 
@@ -262,7 +263,7 @@ const MainAdminDashEmployee = () => {
             <div className="popwrap">
               <h1>Are You Sure?</h1>
               <div className="YesNo">
-                <button onClick={handlelogoutYes} className="yesbtn">
+                <button onClick={handlelogoutYes2} className="yesbtn">
                   YES
                 </button>
                 <button onClick={() => setPop(false)} className="yesbtn">
