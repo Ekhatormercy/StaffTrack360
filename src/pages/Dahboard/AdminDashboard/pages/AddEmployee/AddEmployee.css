@@ -22,13 +22,21 @@
     height: 90;
    }
 }
+.sectionHead p{
+  font-family: raleway, Poppins;
+  font-size: 20px;
+  font-weight: 800;
+  
+}
 .Section1{
   width: 60%;
   height: 90%;
+  font-family: raleway;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1px #00756A;justify-content: space-around;
+  border: solid 1px #00756A;
+  justify-content: space-around;
   @media screen and (max-width:414px) {
     width: 90%;
     height: 90;
@@ -38,9 +46,13 @@
 .Section1 input{
   width: 80%;
   height: 12%;
+  font-family: raleway;
   border-radius: 5px;
   border: solid 1px grey;
   padding-left: 10px;
+}
+.Section1 input:hover{
+  border: 2px solid  #00756A;
 }
 .isError{
    color: red;
@@ -49,9 +61,51 @@
 .Section1 button{
   width: 50%;
   height: 12%;
+  font-family: raleway;
   border-radius: 5px;
   color: white;
   background-color: #00756A;
   border: none;
   cursor: pointer;
+}
+@media screen and (max-width:1137px) {
+  .Section1{
+  width: 95%;
+  height: 90%;
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px #00756A;justify-content: space-around;
+}
+.sectionHead{
+  width: 60%;
+  height: 10%;
+  display: flex;
+  font-family: raleway;
+}
+.sectionHead p{
+  font-family: raleway, Poppins;
+  font-size: 15px;
+
+}
+.Section1 input{
+  width: 90%;
+  height: 12%;
+  font-family: raleway;
+  border-radius: 5px;
+  border: solid 1px grey;
+  padding-left: 10px;
+}
+.Section1 button{
+  width: 50%;
+  height: 12%;
+  font-family: raleway;
+  border-radius: 5px;
+  font-size: 15px;
+  color: white;
+  background-color: #00756A;
+  border: none;
+  cursor: pointer;
+}
 }

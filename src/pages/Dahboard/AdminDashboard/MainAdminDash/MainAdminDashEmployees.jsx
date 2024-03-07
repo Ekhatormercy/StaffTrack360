@@ -230,10 +230,7 @@ const MainAdminDashEmployee = () => {
         </div>
         <div className="rightSection">
           <div className="TopRightSection">
-            {/* <DashboardHeaderEMployee show={show} setShow={setShow}/>
-            {
-              show === true? <Dropdowndash/>:null
-            } */}
+          
             <DashboardHeaderEMployee/>
           </div>
           <div className="MainDashboard">

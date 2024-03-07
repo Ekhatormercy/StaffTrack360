@@ -21,7 +21,9 @@ import { HashLoader } from 'react-spinners';
 
 const loginasEmployee = () => {
   // const { userInfo, setUserInfo } = useContext(MyContext)
-  const [isError, setIsError] = useState('')
+  const [isError, setIsError] = useState({
+    state:false, message: "", 
+  })
   const [showPassword, setShowPassword] =useState(false)
   const Nav = useNavigate()
   const [loading, setLoading] = useState(false)
@@ -71,9 +73,11 @@ const loginasEmployee = () => {
       Nav("/dashboardEmployee");
     } catch (err) {
       console.log("Error from api", err);
+      setIsError({state: true, message: err.response.data.message})
       setLoading(false);
+     
 
-      setIsError(err.message ? err.messge : err.response?.data?.message)
+     
       setTimeout(() => {
         setIsError('')
       }, 10000);
@@ -118,6 +122,9 @@ const loginasEmployee = () => {
               
 
               <p className="err1">{errors.password?.message}</p>
+              {
+                isError.state?alert(isError.message):null
+              }
                 
 {/*             
              <button className="LOGINBTN"  

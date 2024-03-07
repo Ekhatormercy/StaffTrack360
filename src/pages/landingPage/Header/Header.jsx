@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react"
 import {Link as ScrollLink} from "react-scroll"
 // import { FcMenu } from 'react-icons/fc';
 import { HiMenu } from "react-icons/hi";
+import { FiMenu } from "react-icons/fi";
+import { FcMenu } from 'react-icons/fc';
 import { RiArrowDownSLine } from "react-icons/ri";
 import { GiCancel } from 'react-icons/gi';
 import { useNavigate } from "react-router-dom";
@@ -27,6 +29,12 @@ const Header =({show, setShow})=>{
     const handletrial =()=>{
         Nav("/signup")
     }
+    const handleAboutUs =()=>{
+        Nav("/Aboutus")
+    }
+    const handlehome =()=>{
+        Nav("/")
+    }
 
 
   useEffect(() => {
@@ -51,7 +59,7 @@ const Header =({show, setShow})=>{
                    
                 </div>
                 <div className={`Navdiv ${isScrolled ? 'text-scrolled' : ''}`}>
-                    <p style={{color: "orange"}}>Home</p>
+                    <p onClick={handlehome} style={{color: "orange"}}>Home</p>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`} ></p>
                     <ScrollLink
               to="seclayer"
@@ -62,7 +70,7 @@ const Header =({show, setShow})=>{
             >
                <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Services</p>
             </ScrollLink>
-                    <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>About Us</p>
+                    <p onClick={handleAboutUs} className={` ${isScrolled ? 'text-scrolled' : ''}`}>About Us</p>
                     <p className={` ${isScrolled ? 'text-scrolled' : ''}`}>Payment</p>
     
                  
@@ -75,7 +83,7 @@ const Header =({show, setShow})=>{
                 <div className='burger' onClick={() => setShow(!show)}>
 
 {
-    show === false ? <HiMenu />: <GiCancel/>
+    show === false ? <FiMenu />:<GiCancel/>
 }
 </div>
 
