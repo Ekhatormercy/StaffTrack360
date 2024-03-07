@@ -48,6 +48,8 @@ function App() {
           <Route path="/changepassword" element = {<PasswordChange/>}/>
           <Route path="/Aboutus" element = {<Aboutus/>}/>
           {/* <Route path='/dashboard/' element={<MainAdminDash />} /> */}
+          
+          {/* <Route path="/dropdown" element={<Dropdowndash/>}/> */}
           <Route element={<PrivatePage />}>
             <Route path='/dashboard/*' element={<MainAdminDash />} />
           </Route>

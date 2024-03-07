@@ -1,23 +1,39 @@
-.Performance{
-  width: 100%;
-  height: 100%;
+.Performance {
+  width: 75vw;
+  height: 70vh;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* background-color: aqua; */
+  /* justify-content: center; */
   align-items: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
+
 }
-.MainPerformance{
-  width: 95%;
-  height: 15%;
+
+.MainPerformanceRating {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  /* gap: 20px; */
+  /* align-items: center; */
+  flex-wrap: wrap;
+  overflow-y: scroll;
+
+}
+
+.MainPerformance {
+  width: 100%;
+  height: 10%;
+  /* background-color: yellow; */
   /* background-color: red; */
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-inline: 10px;
   font-weight: bold;
   font-family: raleway;
+
   @media screen and (max-width:414px) {
     width: 90%;
     height: 10%;
@@ -27,39 +43,98 @@
     gap: 20px;
     overflow-x: scroll;
     font-size: 8px;
-   }
+  }
 }
-.sN{
+
+.MainPerformance2 {
+  width: 100%;
+  height: 50%;
+  /* background-color: yellow; */
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 10px;
+  font-weight: bold;
+  font-family: raleway;
+
+  @media screen and (max-width:414px) {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    overflow-x: scroll;
+    font-size: 8px;
+  }
+}
+
+.sN {
   width: 5%;
   height: 10%;
   /* background-color: grey; */
   font-family: raleway;
 }
-.EmployeeName{
-  width: 30%;
-  height: 10%;
+
+.EmployeeName {
+  width: 20%;
+  /* height: 10%; */
   font-family: raleway;
+  /* background-color: aliceblue; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
-.EmployeeDepartment{
-  width: 30%;
-  height: 10%;
+
+.EmployeeDepartment {
+  width: 20%;
+  /* height: 100%; */
   font-family: raleway;
+  display: flex;
+  justify-content: flex-start;
+  /* background-color: antiquewhite; */
 }
-.ratings{
-  width: 35%;
-  height: 10%;
+
+.ratings {
+  width: 55%;
+  /* height: 10%; */
   display: flex;
   /* background-color: blue; */
   justify-content: space-between;
 }
-.MainPerformanceRating{
-  width: 90%;
-  height: 80%;
+
+.ratings2 {
+  width: 55%;
+  /* height: 10%; */
   display: flex;
+  align-items: center;
+  /* background-color: blue; */
+  /* justify-content: space-between; */
+}
+
+.ratings2 p {
+  width: 15%;
+  /* background-color: blueviolet; */
+  padding-left: 10px;
+}
+
+.ratings p {
+  width: 15%;
+  /* background-color: blueviolet; */
+}
+
+/* .MainPerformanceRating {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  gap: 20px;
   flex-wrap: wrap;
   overflow-y: scroll;
-}
-.MainPerformanceRating p{
+
+} */
+
+.MainPerformanceRating p {
   font-size: 12px;
   font-family: raleway;
   font-weight: 500;
