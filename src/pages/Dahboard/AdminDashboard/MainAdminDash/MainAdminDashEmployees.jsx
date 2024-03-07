@@ -8,7 +8,7 @@ import { IoPersonAddOutline } from "react-icons/io5";
 import { FcDepartment } from "react-icons/fc";
 import DashboardHeader from "../../../../Components/DashboardHeader/DashboardHeader";
 import AddEmployee from "../pages/AddEmployee/AddEmployee";
-import Performance from "../pages/Performances/Performance";
+import Performancehod from "../pages/Performances/Performancehod";
 import AddDepartment from "../pages/addDepartment/AddDepartment";
 import Profile from "../pages/Profile/Profile";
 import { useNavigate } from "react-router-dom";
@@ -236,7 +236,7 @@ console.log(userID)
           </div>
           <div className="MainDashboard">
             {performance ? (
-              <Performance />
+              < Performancehod/>
             ) : dept ? (
               <AddDepartment />
             ) : employee ? (

@@ -14,6 +14,7 @@ import Profile from "../pages/Profile/Profile";
 import { useNavigate } from "react-router-dom";
 import RateEmployee from "../../HodDashboard/Pages/rateEmployee/RateEmployee";
 import Task from "../task/Task";
+import Performancehod from "../pages/Performances/Performancehod";
 // import Dropdowndash from "../../../../Components/DashboardHeader/Droopdowndash";
 const MainAdminDash = () => {
   // const [show, setShow] = useState(false)
@@ -214,6 +215,9 @@ const MainAdminDash = () => {
               <Task />
             ) : rateEmployee ? (
               <RateEmployee />
+            ) :
+            performance2 ? (
+              < Performancehod/>
             ) : null}
           </div>
         </div>

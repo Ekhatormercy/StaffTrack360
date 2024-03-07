@@ -7,16 +7,11 @@ import { loginUserInfo } from '../../Redux/State';
 import { RiArrowDownSLine } from "react-icons/ri";
 // import { GiCancel } from 'react-icons/gi';
 import { useState } from 'react';
-import Dropdowndash from './Droopdowndash';
-
-
 
 const DashboardHeader = () => {
   const userInfo= JSON.parse(localStorage.getItem("loginUserInfo"))
   
   return (
-    <>
-
     <div className='DashboardHeader'>
       <img className='dashboardHeaderLogo' src={logogrn} alt="Logo" />
  
@@ -24,21 +19,11 @@ const DashboardHeader = () => {
       <div className='userProfile'>
         <div className='Initials'>ET</div>
         <div className='ProfileDetail'>
-          <h5>{`${userInfo.firstName} ${userInfo.lastName}`} </h5>
-          <h6>{userInfo.role}</h6>
+             <h5>{`${userInfo.firstName} ${userInfo.lastName}`} </h5>
+             <h6>{userInfo.role}</h6>
         </div>
       </div>
-{
-  show && <div className='dropDown'>
-    
-     <Dropdowndash/>
-
-  </div> 
-}
     </div>
-   
- 
-    </>
   )
 }
 
